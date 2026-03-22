@@ -1,0 +1,261 @@
+        -:    0:Source:/workspace/iso26262-llm-test-framework-update-2026/baseline/Lab/boolean_algebra.cpp
+        -:    0:Graph:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/baseline/Lab/CMakeFiles/baseline_lab.dir/boolean_algebra.cpp.gcno
+        -:    0:Data:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/baseline/Lab/CMakeFiles/baseline_lab.dir/boolean_algebra.cpp.gcda
+        -:    0:Runs:2
+        -:    1:#include "includes/boolean_algebra.h"
+        -:    2:
+function _Z8return_0v called 2 returned 100% blocks executed 100%
+        2:    3:int return_0(void) { return 0; }
+function _Z8return_1v called 2 returned 100% blocks executed 100%
+        2:    4:int return_1(void) { return 1; }
+function _Z8return_ab called 4 returned 100% blocks executed 100%
+        4:    5:bool return_a(bool a) { return a; }
+function _Z12return_NOT_ab called 4 returned 100% blocks executed 100%
+        4:    6:bool return_NOT_a(bool a) { return !a; }
+        -:    7:
+function _Z12check_a_OR_bbb called 8 returned 100% blocks executed 100%
+        8:    8:bool check_a_OR_b(bool a, bool b) {
+        8:    9:  bool check = false;
+        8:   10:  if ((a == true) || (b == true)) {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        6:   11:    check = true;
+        -:   12:  }
+        8:   13:  return check;
+        -:   14:}
+        -:   15:
+function _Z13check_a_XOR_bbb called 8 returned 100% blocks executed 100%
+        8:   16:bool check_a_XOR_b(bool a, bool b) {
+        8:   17:  bool check = false;
+        8:   18:  if (((a == true) && (b == false)) || ((a == false) && (b == true))) {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+branch  4 taken 4 (fallthrough)
+branch  5 taken 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 2
+        4:   19:    check = true;
+        -:   20:  }
+        8:   21:  return check;
+        -:   22:}
+        -:   23:
+function _Z13check_a_NOR_bbb called 8 returned 100% blocks executed 100%
+        8:   24:bool check_a_NOR_b(bool a, bool b) {
+        8:   25:  bool check = false;
+        8:   26:  if ((a == true) || (b == true)) {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        6:   27:    check = true;
+        -:   28:  }
+        8:   29:  return !check;
+        -:   30:}
+        -:   31:
+function _Z13check_a_AND_bbb called 8 returned 100% blocks executed 100%
+        8:   32:bool check_a_AND_b(bool a, bool b) {
+        8:   33:  bool check = false;
+        8:   34:  if ((a == true) && (b == true)) {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        2:   35:    check = true;
+        -:   36:  }
+        8:   37:  return check;
+        -:   38:}
+        -:   39:
+function _Z14check_a_NAND_bbb called 8 returned 100% blocks executed 100%
+        8:   40:bool check_a_NAND_b(bool a, bool b) {
+        8:   41:  bool check = false;
+        8:   42:  if ((a == true) && (b == true)) {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        2:   43:    check = true;
+        -:   44:  }
+        8:   45:  return !check;
+        -:   46:}
+        -:   47:
+function _Z17check_a_OR_b_OR_cbbb called 10 returned 100% blocks executed 100%
+       10:   48:bool check_a_OR_b_OR_c(bool a, bool b, bool c) {
+       10:   49:  bool check = false;
+       10:   50:  if ((a == true) || (b == true) || (c == true)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 2
+        8:   51:    check = true;
+        -:   52:  }
+       10:   53:  return check;
+        -:   54:}
+        -:   55:
+function _Z18check_a_OR_b_AND_cbbb called 10 returned 100% blocks executed 100%
+       10:   56:bool check_a_OR_b_AND_c(bool a, bool b, bool c) {
+       10:   57:  bool check = false;
+       10:   58:  if (((a == true) || (b == true)) && (c == true)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+branch  4 taken 6 (fallthrough)
+branch  5 taken 2
+        6:   59:    check = true;
+        -:   60:  }
+       10:   61:  return check;
+        -:   62:}
+        -:   63:
+function _Z19check_a_OR__b_AND_cbbb called 8 returned 100% blocks executed 100%
+        8:   64:bool check_a_OR__b_AND_c(bool a, bool b, bool c) {
+        8:   65:  bool check = false;
+        8:   66:  if ((a == true) || ((b == true) && (c == true))) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 2
+        4:   67:    check = true;
+        -:   68:  }
+        8:   69:  return check;
+        -:   70:}
+        -:   71:
+function _Z19check_a_AND_b_AND_cbbb called 8 returned 100% blocks executed 100%
+        8:   72:bool check_a_AND_b_AND_c(bool a, bool b, bool c) {
+        8:   73:  bool check = false;
+        8:   74:  if ((a == true) && (b == true) && (c == true)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 2
+        2:   75:    check = true;
+        -:   76:  }
+        8:   77:  return check;
+        -:   78:}
+        -:   79:
+function _Z24check_a_AND_b_OR_a_AND_cbbb called 10 returned 100% blocks executed 100%
+       10:   80:bool check_a_AND_b_OR_a_AND_c(bool a, bool b, bool c) {
+       10:   81:  bool check = false;
+       10:   82:  if (((a == true) && (b == true)) || ((a == true) && (c == true))) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 2
+        6:   83:    check = true;
+        -:   84:  }
+       10:   85:  return check;
+        -:   86:}
+        -:   87:
+function _Z25check_a_AND_b_XOR_a_AND_cbbb called 8 returned 100% blocks executed 100%
+        8:   88:bool check_a_AND_b_XOR_a_AND_c(bool a, bool b, bool c) {
+        8:   89:  bool check = false;
+        8:   90:  bool a_AND_b = false;
+        8:   91:  bool a_AND_c = false;
+        8:   92:  if ((a == true) && (b == true)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:   93:    a_AND_b = true;
+        -:   94:  }
+        8:   95:  if ((a == true) && (c == true)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:   96:    a_AND_c = true;
+        -:   97:  }
+        8:   98:  if (((a_AND_b == true) && (a_AND_c == false)) || ((a_AND_b == false) && (a_AND_c == true))) {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+branch  4 taken 4 (fallthrough)
+branch  5 taken 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 2
+        4:   99:    check = true;
+        -:  100:  }
+        8:  101:  return check;
+        -:  102:}
+        -:  103:
+function _Z29check_a_AND_b_XOR_a_AND_NOT_cbbb called 8 returned 100% blocks executed 100%
+        8:  104:bool check_a_AND_b_XOR_a_AND_NOT_c(bool a, bool b, bool c) {
+        8:  105:  bool check = false;
+        8:  106:  bool a_AND_b = false;
+        8:  107:  bool a_AND_NOT_c = false;
+        8:  108:  if ((a == true) && (b == true)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:  109:    a_AND_b = true;
+        -:  110:  }
+        8:  111:  if ((a == true) && (c == false)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:  112:    a_AND_NOT_c = true;
+        -:  113:  }
+        8:  114:  if (((a_AND_b == true) && (a_AND_NOT_c == false)) || ((a_AND_b == false) && (a_AND_NOT_c == true))) {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+branch  4 taken 4 (fallthrough)
+branch  5 taken 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 2
+        4:  115:    check = true;
+        -:  116:  }
+        8:  117:  return check;
+        -:  118:}
+        -:  119:
+function _Z34check_a_AND_b_XOR_a_AND_NOT_c_OR_dbbbb called 8 returned 100% blocks executed 100%
+        8:  120:bool check_a_AND_b_XOR_a_AND_NOT_c_OR_d(bool a, bool b, bool c, bool d) {
+        8:  121:  bool check = false;
+        8:  122:  bool a_AND_b = false;
+        8:  123:  bool a_AND_NOT_c_OR_d = false;
+        8:  124:  if ((a == true) && (b == true)) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+branch  2 taken 6 (fallthrough)
+branch  3 taken 2
+        6:  125:    a_AND_b = true;
+        -:  126:  }
+        8:  127:  if ((a == true) && ((c == false) || (d == true))) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+branch  2 taken 4 (fallthrough)
+branch  3 taken 4
+branch  4 taken 2 (fallthrough)
+branch  5 taken 2
+        6:  128:    a_AND_NOT_c_OR_d = true;
+        -:  129:  }
+        8:  130:  if (((a_AND_b == true) && (a_AND_NOT_c_OR_d == false)) || ((a_AND_b == false) && (a_AND_NOT_c_OR_d == true))) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 4
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0
+        4:  131:    check = true;
+        -:  132:  }
+        8:  133:  return check;
+        -:  134:}

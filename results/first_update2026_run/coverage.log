@@ -1,2 +1,270 @@
-Coverage not executed.
-Reason: gcovr is not installed in this environment, so the documented baseline coverage path was not ready.
+Coverage execution date (UTC): 2026-03-22T16:58:14Z
+Repository commit: a250e1aec92599c1a877dc03e87423e76a8b903e
+Tool request outcome: gcovr requested, but package installation remained blocked by proxy/network restrictions in this environment.
+
+$ cmake -S . -B build/first_update2026_run -DISO26262_BASELINE_ENABLE_COVERAGE=ON -DISO26262_BASELINE_GENERATED_TEST_DIR=/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run
+
+$ cmake --build build/first_update2026_run
+[ 40%] Built target baseline_lab
+[ 60%] Built target iso26262_gtest_shim
+[ 80%] Built target iso26262_gtest_shim_main
+[100%] Built target first_baseline_generated_tests
+
+$ ctest --test-dir build/first_update2026_run --output-on-failure
+Internal ctest changing into directory: /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run
+Test project /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run
+    Start 1: first_baseline_generated_tests
+1/1 Test #1: first_baseline_generated_tests ...***Failed    0.01 sec
+[==========] Running 61 tests from 61 test cases.
+[ RUN      ] BooleanAlgebra.Return0
+[       OK ] BooleanAlgebra.Return0
+[ RUN      ] BooleanAlgebra.Return1
+[       OK ] BooleanAlgebra.Return1
+[ RUN      ] BooleanAlgebra.ReturnA_True
+[       OK ] BooleanAlgebra.ReturnA_True
+[ RUN      ] BooleanAlgebra.ReturnA_False
+[       OK ] BooleanAlgebra.ReturnA_False
+[ RUN      ] BooleanAlgebra.NotA_True
+[       OK ] BooleanAlgebra.NotA_True
+[ RUN      ] BooleanAlgebra.NotA_False
+[       OK ] BooleanAlgebra.NotA_False
+[ RUN      ] BooleanAlgebra.AorB_BothFalse
+[       OK ] BooleanAlgebra.AorB_BothFalse
+[ RUN      ] BooleanAlgebra.AorB_Atrue
+[       OK ] BooleanAlgebra.AorB_Atrue
+[ RUN      ] BooleanAlgebra.AorB_Btrue
+[       OK ] BooleanAlgebra.AorB_Btrue
+[ RUN      ] BooleanAlgebra.AorB_BothTrue
+[       OK ] BooleanAlgebra.AorB_BothTrue
+[ RUN      ] BooleanAlgebra.AXorB_BothFalse
+[       OK ] BooleanAlgebra.AXorB_BothFalse
+[ RUN      ] BooleanAlgebra.AXorB_Btrue
+[       OK ] BooleanAlgebra.AXorB_Btrue
+[ RUN      ] BooleanAlgebra.AXorB_Atrue
+[       OK ] BooleanAlgebra.AXorB_Atrue
+[ RUN      ] BooleanAlgebra.AXorB_BothTrue
+[       OK ] BooleanAlgebra.AXorB_BothTrue
+[ RUN      ] BooleanAlgebra.ANorB_BothFalse
+[       OK ] BooleanAlgebra.ANorB_BothFalse
+[ RUN      ] BooleanAlgebra.ANorB_Btrue
+[       OK ] BooleanAlgebra.ANorB_Btrue
+[ RUN      ] BooleanAlgebra.ANorB_Atrue
+[       OK ] BooleanAlgebra.ANorB_Atrue
+[ RUN      ] BooleanAlgebra.ANorB_BothTrue
+[       OK ] BooleanAlgebra.ANorB_BothTrue
+[ RUN      ] BooleanAlgebra.AAndB_BothFalse
+[       OK ] BooleanAlgebra.AAndB_BothFalse
+[ RUN      ] BooleanAlgebra.AAndB_Btrue
+[       OK ] BooleanAlgebra.AAndB_Btrue
+[ RUN      ] BooleanAlgebra.AAndB_Atrue
+[       OK ] BooleanAlgebra.AAndB_Atrue
+[ RUN      ] BooleanAlgebra.AAndB_BothTrue
+[       OK ] BooleanAlgebra.AAndB_BothTrue
+[ RUN      ] BooleanAlgebra.ANandB_BothFalse
+[       OK ] BooleanAlgebra.ANandB_BothFalse
+[ RUN      ] BooleanAlgebra.ANandB_Btrue
+[       OK ] BooleanAlgebra.ANandB_Btrue
+[ RUN      ] BooleanAlgebra.ANandB_Atrue
+[       OK ] BooleanAlgebra.ANandB_Atrue
+[ RUN      ] BooleanAlgebra.ANandB_BothTrue
+[       OK ] BooleanAlgebra.ANandB_BothTrue
+[ RUN      ] BooleanAlgebra.AorBorC_AllFalse
+[       OK ] BooleanAlgebra.AorBorC_AllFalse
+[ RUN      ] BooleanAlgebra.AorBorC_Atrue
+[       OK ] BooleanAlgebra.AorBorC_Atrue
+[ RUN      ] BooleanAlgebra.AorBorC_Btrue
+[       OK ] BooleanAlgebra.AorBorC_Btrue
+[ RUN      ] BooleanAlgebra.AorBorC_Ctrue
+[       OK ] BooleanAlgebra.AorBorC_Ctrue
+[ RUN      ] BooleanAlgebra.AorBorC_AllTrue
+[       OK ] BooleanAlgebra.AorBorC_AllTrue
+[ RUN      ] BooleanAlgebra.AorBAndC_AllFalse
+[       OK ] BooleanAlgebra.AorBAndC_AllFalse
+[ RUN      ] BooleanAlgebra.AorBAndC_Btrue
+[       OK ] BooleanAlgebra.AorBAndC_Btrue
+[ RUN      ] BooleanAlgebra.AorBAndC_AllTrue
+[       OK ] BooleanAlgebra.AorBAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AorBAndC_Btrue_Ctrue
+[       OK ] BooleanAlgebra.AorBAndC_Btrue_Ctrue
+[ RUN      ] BooleanAlgebra.AorBAndC_Atrue_Ctrue
+[       OK ] BooleanAlgebra.AorBAndC_Atrue_Ctrue
+[ RUN      ] BooleanAlgebra.Aor_BAndC_AllFalse
+[       OK ] BooleanAlgebra.Aor_BAndC_AllFalse
+[ RUN      ] BooleanAlgebra.Aor_BAndC_Atrue
+[       OK ] BooleanAlgebra.Aor_BAndC_Atrue
+[ RUN      ] BooleanAlgebra.Aor_BAndC_BAndCTrue
+[       OK ] BooleanAlgebra.Aor_BAndC_BAndCTrue
+[ RUN      ] BooleanAlgebra.Aor_BAndC_BTrue_CFalse
+[       OK ] BooleanAlgebra.Aor_BAndC_BTrue_CFalse
+[ RUN      ] BooleanAlgebra.AAndBAndC_AllTrue
+[       OK ] BooleanAlgebra.AAndBAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBAndC_CFalse
+[       OK ] BooleanAlgebra.AAndBAndC_CFalse
+[ RUN      ] BooleanAlgebra.AAndBAndC_BFalse
+[       OK ] BooleanAlgebra.AAndBAndC_BFalse
+[ RUN      ] BooleanAlgebra.AAndBAndC_AFalse
+[       OK ] BooleanAlgebra.AAndBAndC_AFalse
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_AAndB
+[       OK ] BooleanAlgebra.AAndBOrAAndC_AAndB
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_AAndC
+[       OK ] BooleanAlgebra.AAndBOrAAndC_AAndC
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_OnlyA
+[       OK ] BooleanAlgebra.AAndBOrAAndC_OnlyA
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_AllTrue
+[       OK ] BooleanAlgebra.AAndBOrAAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_OnlyB
+[       OK ] BooleanAlgebra.AAndBOrAAndC_OnlyB
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AAndB
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AAndB
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AAndC
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AAndC
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AFalse
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AFalse
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AllTrue
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AAndB_CFalse
+/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp:84: Failure
+EXPECT_TRUE failed: check_a_AND_b_XOR_a_AND_NOT_c(true, true, false)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotC_AAndB_CFalse
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AllTrue
+/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp:85: Failure
+EXPECT_FALSE failed: check_a_AND_b_XOR_a_AND_NOT_c(true, true, true)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AAndNotC
+[       OK ] BooleanAlgebra.AAndBXorAAndNotC_AAndNotC
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AFalse
+[       OK ] BooleanAlgebra.AAndBXorAAndNotC_AFalse
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndB
+/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp:90: Failure
+EXPECT_TRUE failed: check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, false, false)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndB
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AllTrue
+[       OK ] BooleanAlgebra.AAndBXorAAndNotCOrD_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndNotCOrD
+[       OK ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndNotCOrD
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndBOrC
+/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp:93: Failure
+EXPECT_FALSE failed: check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, false)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndBOrC
+[==========] 61 tests ran.
+[  PASSED  ] 57 tests.
+[  FAILED  ] 4 tests.
+
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   0.02 sec
+
+The following tests FAILED:
+	  1 - first_baseline_generated_tests (Failed)
+Errors while running CTest
+CTEST_EXIT=8
+
+$ gcov --version | head -n 1
+gcov (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+
+$ cd results/first_update2026_run/.coverage_tmp && gcov -b -c build/.../boolean_algebra.cpp.gcno
+File '/workspace/iso26262-llm-test-framework-update-2026/baseline/Lab/boolean_algebra.cpp'
+Lines executed:100.00% of 87
+Branches executed:100.00% of 106
+Taken at least once:97.17% of 106
+No calls
+Creating 'boolean_algebra.cpp.gcov'
+
+Lines executed:100.00% of 87
+
+$ cd results/first_update2026_run/.coverage_tmp && gcov -b -c build/.../generated_test_file.cpp.gcno
+File '/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp'
+Lines executed:100.00% of 61
+Branches executed:30.08% of 512
+Taken at least once:15.04% of 512
+Calls executed:24.78% of 573
+Creating 'generated_test_file.cpp.gcov'
+
+File '/usr/include/c++/13/bits/std_function.h'
+Lines executed:67.50% of 80
+Branches executed:100.00% of 12
+Taken at least once:41.67% of 12
+Calls executed:55.88% of 34
+Creating 'std_function.h.gcov'
+
+File '/usr/include/c++/13/bits/move.h'
+Lines executed:75.00% of 16
+No branches
+No calls
+Creating 'move.h.gcov'
+
+File '/usr/include/c++/13/bits/invoke.h'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 4
+Creating 'invoke.h.gcov'
+
+File '/usr/include/c++/13/bits/basic_string.tcc'
+Lines executed:100.00% of 12
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+Calls executed:88.89% of 9
+Creating 'basic_string.tcc.gcov'
+
+File '/usr/include/c++/13/bits/stl_iterator_base_types.h'
+Lines executed:100.00% of 1
+No branches
+No calls
+Creating 'stl_iterator_base_types.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_iterator_base_funcs.h'
+Lines executed:100.00% of 3
+No branches
+No calls
+Creating 'stl_iterator_base_funcs.h.gcov'
+
+File '/usr/include/c++/13/bits/basic_string.h'
+Lines executed:50.00% of 18
+Branches executed:42.86% of 14
+Taken at least once:21.43% of 14
+Calls executed:36.84% of 19
+Creating 'basic_string.h.gcov'
+
+File '/usr/include/c++/13/bits/new_allocator.h'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'new_allocator.h.gcov'
+
+File '/usr/include/c++/13/bits/char_traits.h'
+Lines executed:20.00% of 15
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:33.33% of 3
+Creating 'char_traits.h.gcov'
+
+File '/workspace/iso26262-llm-test-framework-update-2026/third_party/gtest_shim/include/gtest/gtest.h'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 5
+Creating 'gtest.h.gcov'
+
+File '/usr/include/c++/13/bits/allocator.h'
+Lines executed:100.00% of 2
+No branches
+Calls executed:3.28% of 122
+Creating 'allocator.h.gcov'
+
+File '/usr/include/c++/13/new'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'new.gcov'
+
+File '/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'c++config.h.gcov'
+
+Lines executed:75.00% of 224
