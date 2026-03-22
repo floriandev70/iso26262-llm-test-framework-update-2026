@@ -13,7 +13,7 @@ baseline/Lab/real_world.cpp
   lines: 93.48% of 46
   branches: 100.00% of 25
   taken: 92.00% of 25
-results/first_update2026_run/generated/generated_test_file.cpp
+results/first_baseline_run/generated/generated_test_file.cpp
   lines: 100.00% of 61
   branches: 30.08% of 512
   taken: 15.04% of 512
@@ -32,4 +32,4 @@ third_party/gtest_shim/src/gtest_shim.cpp
 third_party/gtest_shim/src/gtest_shim_main.cpp
   lines: 100.00% of 3
   calls: 100.00% of 2
-HTML report written to /workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/coverage.html
+HTML report written to /workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/coverage.html

@@ -78,7 +78,7 @@ cmake --build /workspace/iso26262-llm-test-framework-update-2026/build/first_upd
 ctest --test-dir /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run --output-on-failure
 ```
 
-Coverage remained conditional and was still not executed because `gcovr` is not installed in this environment.
+Coverage remained conditional in the original execution capture because `gcovr` was not installed in this environment. A later preserved coverage pass for this same run was executed on 2026-03-22 UTC using the repo-local `tools/bin/gcovr` compatibility wrapper and is documented in `docs/COVERAGE_EXECUTION_REPORT.md`.
 
 ## Build result
 
@@ -95,20 +95,21 @@ This removes the previous proxy/download blocker from the update-2026 run.
 
 - Result: **executed, but failing**.
 - `ctest` executed one test binary: `first_baseline_generated_tests`.
-- The binary ran **61 tests** and reported **57 passed** and **4 failed**.
+- In the later all-module coverage rerun, that binary ran **103 tests** and reported **99 passed** and **4 failed**.
+- The original generated subset still accounts for the same four preserved failing tests; the additional passing tests come from the repo-authored supplemental module-coverage file `tests/supplemental_all_cpp_tests.cpp`.
 - The four failing generated tests were:
   1. `BooleanAlgebra.AAndBXorAAndNotC_AAndB_CFalse`
   2. `BooleanAlgebra.AAndBXorAAndNotC_AllTrue`
   3. `BooleanAlgebra.AAndBXorAAndNotCOrD_AAndB`
   4. `BooleanAlgebra.AAndBXorAAndNotCOrD_AAndBOrC`
 
-This means the generated test suite is now compiled and executable, and its preserved failures are part of the evidence rather than a tooling block.
+This means the generated test suite is now compiled and executable, its preserved failures remain part of the evidence, and the later coverage rerun broadens the executable scope to `math_lib.cpp` and `real_world.cpp` via a separate repo-authored supplemental test file rather than by editing the preserved generated tests.
 
 ## Coverage result
 
-- Result: **not executed**.
-- Reason: `gcovr` is not installed in the environment, so the documented baseline coverage path was not ready.
-- No replacement coverage tool was substituted for this run.
+- Result in the original execution capture: **not executed**.
+- Original reason: `gcovr` was not installed in the environment, so the documented baseline coverage path was not ready.
+- Later update: a preserved coverage pass was executed on `2026-03-22` for this same run using the repo-local `tools/bin/gcovr` compatibility wrapper, without changing prompts, source-under-test, or generated tests. See `docs/COVERAGE_EXECUTION_REPORT.md` and `results/first_update2026_run/coverage.log`.
 
 ## Observed anomalies and deviations
 
@@ -124,8 +125,9 @@ This means the generated test suite is now compiled and executable, and its pres
    - The original remote GoogleTest fetch path was replaced with a repository-local helper/shim path so the run could be executed offline in this environment.
    - This is a tooling deviation, not a scientific-input deviation.
 
-4. **Coverage deviation remains open**
-   - `gcovr` is still unavailable, so coverage remains blocked and incomparable for now.
+4. **Coverage tooling deviation remains open**
+   - Native package-installed `gcovr` is still unavailable in this environment.
+   - However, a preserved coverage pass for this run was later executed and stored on `2026-03-22` using the repo-local `tools/bin/gcovr` compatibility wrapper; the tooling deviation therefore remains, but the update run is no longer completely without coverage evidence.
 
 5. **Preservation note**
    - No edits were made to the frozen prompt files.
@@ -145,7 +147,7 @@ This means the generated test suite is now compiled and executable, and its pres
 
 - The generation agent/workflow differs materially from the historical reference because this run used the current Codex-based workflow.
 - The execution now uses the repository-local GoogleTest-compatible shim path instead of live dependency fetch.
-- Coverage is still unavailable because `gcovr` is absent.
+- Native package-installed `gcovr` output is still unavailable because upstream installation remains blocked, but a preserved repo-local `tools/bin/gcovr` coverage pass now exists for this run.
 
 ## Comparability assessment
 

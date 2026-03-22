@@ -1,0 +1,15 @@
+[  9%] Building CXX object baseline/Lab/CMakeFiles/baseline_lab.dir/boolean_algebra.cpp.o
+[ 18%] Building CXX object baseline/Lab/CMakeFiles/baseline_lab.dir/math_lib.cpp.o
+[ 27%] Building CXX object baseline/Lab/CMakeFiles/baseline_lab.dir/real_world.cpp.o
+[ 36%] Linking CXX static library libbaseline_lab.a
+[ 36%] Built target baseline_lab
+[ 45%] Building CXX object generated_baseline_tests/CMakeFiles/iso26262_gtest_shim.dir/__/__/__/third_party/gtest_shim/src/gtest_shim.cpp.o
+[ 54%] Linking CXX static library libiso26262_gtest_shim.a
+[ 54%] Built target iso26262_gtest_shim
+[ 63%] Building CXX object generated_baseline_tests/CMakeFiles/iso26262_gtest_shim_main.dir/__/__/__/third_party/gtest_shim/src/gtest_shim_main.cpp.o
+[ 72%] Linking CXX static library libiso26262_gtest_shim_main.a
+[ 72%] Built target iso26262_gtest_shim_main
+[ 81%] Building CXX object generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.o
+[ 90%] Building CXX object generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/__/__/__/tests/supplemental_all_cpp_tests.cpp.o
+[100%] Linking CXX executable first_baseline_generated_tests
+[100%] Built target first_baseline_generated_tests
