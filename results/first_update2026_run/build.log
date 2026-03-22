@@ -1,0 +1,31 @@
+$ cmake -S /workspace/iso26262-llm-test-framework-update-2026 -B /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run -DISO26262_BASELINE_ENABLE_COVERAGE=ON -DISO26262_BASELINE_GENERATED_TEST_DIR=/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run
+$ cmake --build /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run
+[ 10%] Building CXX object baseline/Lab/CMakeFiles/baseline_lab.dir/boolean_algebra.cpp.o
+[ 20%] Building CXX object baseline/Lab/CMakeFiles/baseline_lab.dir/math_lib.cpp.o
+[ 30%] Building CXX object baseline/Lab/CMakeFiles/baseline_lab.dir/real_world.cpp.o
+[ 40%] Linking CXX static library libbaseline_lab.a
+[ 40%] Built target baseline_lab
+[ 50%] Building CXX object generated_baseline_tests/CMakeFiles/iso26262_gtest_shim.dir/__/__/__/third_party/gtest_shim/src/gtest_shim.cpp.o
+[ 60%] Linking CXX static library libiso26262_gtest_shim.a
+[ 60%] Built target iso26262_gtest_shim
+[ 70%] Building CXX object generated_baseline_tests/CMakeFiles/iso26262_gtest_shim_main.dir/__/__/__/third_party/gtest_shim/src/gtest_shim_main.cpp.o
+[ 80%] Linking CXX static library libiso26262_gtest_shim_main.a
+[ 80%] Built target iso26262_gtest_shim_main
+[ 90%] Building CXX object generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.o
+[100%] Linking CXX executable first_baseline_generated_tests
+[100%] Built target first_baseline_generated_tests
