@@ -1,0 +1,1243 @@
+        -:    0:Source:/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp
+        -:    0:Graph:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.gcno
+        -:    0:Data:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.gcda
+        -:    0:Runs:2
+        -:    1:#include <gtest/gtest.h>
+        -:    2:#include "includes/boolean_algebra.h"
+        -:    3:
+        -:    4:// return_0 and return_1
+function _ZL27BooleanAlgebra_Return0_implv called 2 returned 100% blocks executed 12%
+       2*:    5:TEST(BooleanAlgebra, Return0) { EXPECT_EQ(return_0(), 0); }
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+branch  6 taken 0 (fallthrough)
+branch  7 taken 2
+call    8 never executed
+branch  9 never executed (fallthrough)
+branch 10 never executed (throw)
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+call   17 never executed
+branch 18 never executed (fallthrough)
+branch 19 never executed (throw)
+call   20 never executed
+branch 21 never executed (fallthrough)
+branch 22 never executed (throw)
+call   23 never executed
+branch 24 never executed (fallthrough)
+branch 25 never executed (throw)
+call   26 never executed
+branch 27 never executed (fallthrough)
+branch 28 never executed (throw)
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+call   34 never executed
+call   35 never executed
+call   36 never executed
+call   37 never executed
+call   38 never executed
+call   39 never executed
+call   40 never executed
+function _ZL27BooleanAlgebra_Return1_implv called 2 returned 100% blocks executed 12%
+       2*:    6:TEST(BooleanAlgebra, Return1) { EXPECT_EQ(return_1(), 1); }
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+branch  6 taken 0 (fallthrough)
+branch  7 taken 2
+call    8 never executed
+branch  9 never executed (fallthrough)
+branch 10 never executed (throw)
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+call   17 never executed
+branch 18 never executed (fallthrough)
+branch 19 never executed (throw)
+call   20 never executed
+branch 21 never executed (fallthrough)
+branch 22 never executed (throw)
+call   23 never executed
+branch 24 never executed (fallthrough)
+branch 25 never executed (throw)
+call   26 never executed
+branch 27 never executed (fallthrough)
+branch 28 never executed (throw)
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+call   34 never executed
+call   35 never executed
+call   36 never executed
+call   37 never executed
+call   38 never executed
+call   39 never executed
+call   40 never executed
+        -:    7:
+        -:    8:// return_a and return_NOT_a
+function _ZL32BooleanAlgebra_ReturnA_True_implv called 2 returned 100% blocks executed 23%
+       2*:    9:TEST(BooleanAlgebra, ReturnA_True) { EXPECT_TRUE(return_a(true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL33BooleanAlgebra_ReturnA_False_implv called 2 returned 100% blocks executed 23%
+       2*:   10:TEST(BooleanAlgebra, ReturnA_False) { EXPECT_FALSE(return_a(false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL29BooleanAlgebra_NotA_True_implv called 2 returned 100% blocks executed 23%
+       2*:   11:TEST(BooleanAlgebra, NotA_True) { EXPECT_FALSE(return_NOT_a(true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL30BooleanAlgebra_NotA_False_implv called 2 returned 100% blocks executed 23%
+       2*:   12:TEST(BooleanAlgebra, NotA_False) { EXPECT_TRUE(return_NOT_a(false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   13:
+        -:   14:// check_a_OR_b
+function _ZL34BooleanAlgebra_AorB_BothFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   15:TEST(BooleanAlgebra, AorB_BothFalse) { EXPECT_FALSE(check_a_OR_b(false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL30BooleanAlgebra_AorB_Atrue_implv called 2 returned 100% blocks executed 23%
+       2*:   16:TEST(BooleanAlgebra, AorB_Atrue) { EXPECT_TRUE(check_a_OR_b(true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL30BooleanAlgebra_AorB_Btrue_implv called 2 returned 100% blocks executed 23%
+       2*:   17:TEST(BooleanAlgebra, AorB_Btrue) { EXPECT_TRUE(check_a_OR_b(false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL33BooleanAlgebra_AorB_BothTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   18:TEST(BooleanAlgebra, AorB_BothTrue) { EXPECT_TRUE(check_a_OR_b(true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   19:
+        -:   20:// check_a_XOR_b
+function _ZL35BooleanAlgebra_AXorB_BothFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   21:TEST(BooleanAlgebra, AXorB_BothFalse) { EXPECT_FALSE(check_a_XOR_b(false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL31BooleanAlgebra_AXorB_Btrue_implv called 2 returned 100% blocks executed 23%
+       2*:   22:TEST(BooleanAlgebra, AXorB_Btrue) { EXPECT_TRUE(check_a_XOR_b(false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL31BooleanAlgebra_AXorB_Atrue_implv called 2 returned 100% blocks executed 23%
+       2*:   23:TEST(BooleanAlgebra, AXorB_Atrue) { EXPECT_TRUE(check_a_XOR_b(true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL34BooleanAlgebra_AXorB_BothTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   24:TEST(BooleanAlgebra, AXorB_BothTrue) { EXPECT_FALSE(check_a_XOR_b(true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   25:
+        -:   26:// check_a_NOR_b
+function _ZL35BooleanAlgebra_ANorB_BothFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   27:TEST(BooleanAlgebra, ANorB_BothFalse) { EXPECT_TRUE(check_a_NOR_b(false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL31BooleanAlgebra_ANorB_Btrue_implv called 2 returned 100% blocks executed 23%
+       2*:   28:TEST(BooleanAlgebra, ANorB_Btrue) { EXPECT_FALSE(check_a_NOR_b(false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL31BooleanAlgebra_ANorB_Atrue_implv called 2 returned 100% blocks executed 23%
+       2*:   29:TEST(BooleanAlgebra, ANorB_Atrue) { EXPECT_FALSE(check_a_NOR_b(true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL34BooleanAlgebra_ANorB_BothTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   30:TEST(BooleanAlgebra, ANorB_BothTrue) { EXPECT_FALSE(check_a_NOR_b(true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   31:
+        -:   32:// check_a_AND_b
+function _ZL35BooleanAlgebra_AAndB_BothFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   33:TEST(BooleanAlgebra, AAndB_BothFalse) { EXPECT_FALSE(check_a_AND_b(false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL31BooleanAlgebra_AAndB_Btrue_implv called 2 returned 100% blocks executed 23%
+       2*:   34:TEST(BooleanAlgebra, AAndB_Btrue) { EXPECT_FALSE(check_a_AND_b(false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL31BooleanAlgebra_AAndB_Atrue_implv called 2 returned 100% blocks executed 23%
+       2*:   35:TEST(BooleanAlgebra, AAndB_Atrue) { EXPECT_FALSE(check_a_AND_b(true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL34BooleanAlgebra_AAndB_BothTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   36:TEST(BooleanAlgebra, AAndB_BothTrue) { EXPECT_TRUE(check_a_AND_b(true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   37:
+        -:   38:// check_a_NAND_b
+function _ZL36BooleanAlgebra_ANandB_BothFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   39:TEST(BooleanAlgebra, ANandB_BothFalse) { EXPECT_TRUE(check_a_NAND_b(false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL32BooleanAlgebra_ANandB_Btrue_implv called 2 returned 100% blocks executed 23%
+       2*:   40:TEST(BooleanAlgebra, ANandB_Btrue) { EXPECT_TRUE(check_a_NAND_b(false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL32BooleanAlgebra_ANandB_Atrue_implv called 2 returned 100% blocks executed 23%
+       2*:   41:TEST(BooleanAlgebra, ANandB_Atrue) { EXPECT_TRUE(check_a_NAND_b(true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL35BooleanAlgebra_ANandB_BothTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   42:TEST(BooleanAlgebra, ANandB_BothTrue) { EXPECT_FALSE(check_a_NAND_b(true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   43:
+        -:   44:// check_a_OR_b_OR_c
+function _ZL36BooleanAlgebra_AorBorC_AllFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   45:TEST(BooleanAlgebra, AorBorC_AllFalse) { EXPECT_FALSE(check_a_OR_b_OR_c(false, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL33BooleanAlgebra_AorBorC_Atrue_implv called 2 returned 100% blocks executed 23%
+       2*:   46:TEST(BooleanAlgebra, AorBorC_Atrue) { EXPECT_TRUE(check_a_OR_b_OR_c(true, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL33BooleanAlgebra_AorBorC_Btrue_implv called 2 returned 100% blocks executed 23%
+       2*:   47:TEST(BooleanAlgebra, AorBorC_Btrue) { EXPECT_TRUE(check_a_OR_b_OR_c(false, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL33BooleanAlgebra_AorBorC_Ctrue_implv called 2 returned 100% blocks executed 23%
+       2*:   48:TEST(BooleanAlgebra, AorBorC_Ctrue) { EXPECT_TRUE(check_a_OR_b_OR_c(false, false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL35BooleanAlgebra_AorBorC_AllTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   49:TEST(BooleanAlgebra, AorBorC_AllTrue) { EXPECT_TRUE(check_a_OR_b_OR_c(true, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   50:
+        -:   51:// check_a_OR_b_AND_c
+function _ZL37BooleanAlgebra_AorBAndC_AllFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   52:TEST(BooleanAlgebra, AorBAndC_AllFalse) { EXPECT_FALSE(check_a_OR_b_AND_c(false, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL34BooleanAlgebra_AorBAndC_Btrue_implv called 2 returned 100% blocks executed 23%
+       2*:   53:TEST(BooleanAlgebra, AorBAndC_Btrue) { EXPECT_FALSE(check_a_OR_b_AND_c(false, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL36BooleanAlgebra_AorBAndC_AllTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   54:TEST(BooleanAlgebra, AorBAndC_AllTrue) { EXPECT_TRUE(check_a_OR_b_AND_c(true, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL40BooleanAlgebra_AorBAndC_Btrue_Ctrue_implv called 2 returned 100% blocks executed 23%
+       2*:   55:TEST(BooleanAlgebra, AorBAndC_Btrue_Ctrue) { EXPECT_TRUE(check_a_OR_b_AND_c(false, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL40BooleanAlgebra_AorBAndC_Atrue_Ctrue_implv called 2 returned 100% blocks executed 23%
+       2*:   56:TEST(BooleanAlgebra, AorBAndC_Atrue_Ctrue) { EXPECT_TRUE(check_a_OR_b_AND_c(true, false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   57:
+        -:   58:// check_a_OR__b_AND_c
+function _ZL38BooleanAlgebra_Aor_BAndC_AllFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   59:TEST(BooleanAlgebra, Aor_BAndC_AllFalse) { EXPECT_FALSE(check_a_OR__b_AND_c(false, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL35BooleanAlgebra_Aor_BAndC_Atrue_implv called 2 returned 100% blocks executed 23%
+       2*:   60:TEST(BooleanAlgebra, Aor_BAndC_Atrue) { EXPECT_TRUE(check_a_OR__b_AND_c(true, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL39BooleanAlgebra_Aor_BAndC_BAndCTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   61:TEST(BooleanAlgebra, Aor_BAndC_BAndCTrue) { EXPECT_TRUE(check_a_OR__b_AND_c(false, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL42BooleanAlgebra_Aor_BAndC_BTrue_CFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   62:TEST(BooleanAlgebra, Aor_BAndC_BTrue_CFalse) { EXPECT_FALSE(check_a_OR__b_AND_c(false, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   63:
+        -:   64:// check_a_AND_b_AND_c
+function _ZL37BooleanAlgebra_AAndBAndC_AllTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   65:TEST(BooleanAlgebra, AAndBAndC_AllTrue) { EXPECT_TRUE(check_a_AND_b_AND_c(true, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL36BooleanAlgebra_AAndBAndC_CFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   66:TEST(BooleanAlgebra, AAndBAndC_CFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(true, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL36BooleanAlgebra_AAndBAndC_BFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   67:TEST(BooleanAlgebra, AAndBAndC_BFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(true, false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL36BooleanAlgebra_AAndBAndC_AFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   68:TEST(BooleanAlgebra, AAndBAndC_AFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(false, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   69:
+        -:   70:// check_a_AND_b_OR_a_AND_c
+function _ZL38BooleanAlgebra_AAndBOrAAndC_AAndB_implv called 2 returned 100% blocks executed 23%
+       2*:   71:TEST(BooleanAlgebra, AAndBOrAAndC_AAndB) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL38BooleanAlgebra_AAndBOrAAndC_AAndC_implv called 2 returned 100% blocks executed 23%
+       2*:   72:TEST(BooleanAlgebra, AAndBOrAAndC_AAndC) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL38BooleanAlgebra_AAndBOrAAndC_OnlyA_implv called 2 returned 100% blocks executed 23%
+       2*:   73:TEST(BooleanAlgebra, AAndBOrAAndC_OnlyA) { EXPECT_FALSE(check_a_AND_b_OR_a_AND_c(true, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL40BooleanAlgebra_AAndBOrAAndC_AllTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   74:TEST(BooleanAlgebra, AAndBOrAAndC_AllTrue) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL38BooleanAlgebra_AAndBOrAAndC_OnlyB_implv called 2 returned 100% blocks executed 23%
+       2*:   75:TEST(BooleanAlgebra, AAndBOrAAndC_OnlyB) { EXPECT_FALSE(check_a_AND_b_OR_a_AND_c(false, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   76:
+        -:   77:// check_a_AND_b_XOR_a_AND_c
+function _ZL39BooleanAlgebra_AAndBXorAAndC_AAndB_implv called 2 returned 100% blocks executed 23%
+       2*:   78:TEST(BooleanAlgebra, AAndBXorAAndC_AAndB) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_c(true, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL39BooleanAlgebra_AAndBXorAAndC_AAndC_implv called 2 returned 100% blocks executed 23%
+       2*:   79:TEST(BooleanAlgebra, AAndBXorAAndC_AAndC) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_c(true, false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL40BooleanAlgebra_AAndBXorAAndC_AFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   80:TEST(BooleanAlgebra, AAndBXorAAndC_AFalse) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_c(false, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL41BooleanAlgebra_AAndBXorAAndC_AllTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   81:TEST(BooleanAlgebra, AAndBXorAAndC_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_c(true, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   82:
+        -:   83:// check_a_AND_b_XOR_a_AND_NOT_c
+function _ZL49BooleanAlgebra_AAndBXorAAndNotC_AAndB_CFalse_implv called 2 returned 100% blocks executed 64%
+        6:   84:TEST(BooleanAlgebra, AAndBXorAAndNotC_AAndB_CFalse) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c(true, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+call   13 returned 2
+call   14 returned 2
+call   15 never executed
+call   16 never executed
+function _ZL44BooleanAlgebra_AAndBXorAAndNotC_AllTrue_implv called 2 returned 100% blocks executed 64%
+        6:   85:TEST(BooleanAlgebra, AAndBXorAAndNotC_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c(true, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+call   13 returned 2
+call   14 returned 2
+call   15 never executed
+call   16 never executed
+function _ZL45BooleanAlgebra_AAndBXorAAndNotC_AAndNotC_implv called 2 returned 100% blocks executed 23%
+       2*:   86:TEST(BooleanAlgebra, AAndBXorAAndNotC_AAndNotC) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c(true, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL43BooleanAlgebra_AAndBXorAAndNotC_AFalse_implv called 2 returned 100% blocks executed 23%
+       2*:   87:TEST(BooleanAlgebra, AAndBXorAAndNotC_AFalse) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c(false, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+        -:   88:
+        -:   89:// check_a_AND_b_XOR_a_AND_NOT_c_OR_d
+function _ZL45BooleanAlgebra_AAndBXorAAndNotCOrD_AAndB_implv called 2 returned 100% blocks executed 64%
+        6:   90:TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndB) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, false, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+call   13 returned 2
+call   14 returned 2
+call   15 never executed
+call   16 never executed
+function _ZL47BooleanAlgebra_AAndBXorAAndNotCOrD_AllTrue_implv called 2 returned 100% blocks executed 23%
+       2*:   91:TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL51BooleanAlgebra_AAndBXorAAndNotCOrD_AAndNotCOrD_implv called 2 returned 100% blocks executed 23%
+       2*:   92:TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndNotCOrD) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, false, false, true)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+function _ZL48BooleanAlgebra_AAndBXorAAndNotCOrD_AAndBOrC_implv called 2 returned 100% blocks executed 64%
+        6:   93:TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndBOrC) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, false)); }
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+call   13 returned 2
+call   14 returned 2
+call   15 never executed
+call   16 never executed

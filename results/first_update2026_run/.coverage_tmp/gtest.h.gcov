@@ -1,0 +1,113 @@
+        -:    0:Source:/workspace/iso26262-llm-test-framework-update-2026/third_party/gtest_shim/include/gtest/gtest.h
+        -:    0:Graph:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.gcno
+        -:    0:Data:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.gcda
+        -:    0:Runs:2
+        -:    1:#ifndef ISO26262_GTEST_SHIM_GTEST_H
+        -:    2:#define ISO26262_GTEST_SHIM_GTEST_H
+        -:    3:
+        -:    4:#include <functional>
+        -:    5:#include <iostream>
+        -:    6:#include <sstream>
+        -:    7:#include <string>
+        -:    8:#include <utility>
+        -:    9:#include <vector>
+        -:   10:
+        -:   11:namespace testing {
+        -:   12:
+        -:   13:struct TestCaseRecord {
+        -:   14:  std::string suite_name;
+        -:   15:  std::string test_name;
+        -:   16:  std::function<void()> fn;
+        -:   17:};
+        -:   18:
+        -:   19:struct TestState {
+        -:   20:  int total_assertions = 0;
+        -:   21:  int failed_assertions = 0;
+        -:   22:  bool current_test_failed = false;
+        -:   23:  std::vector<TestCaseRecord> tests;
+        -:   24:};
+        -:   25:
+        -:   26:TestState& GetState();
+        -:   27:void RegisterTest(const char* suite_name, const char* test_name, std::function<void()> fn);
+        -:   28:void RecordFailure(const char* file, int line, const std::string& message);
+        -:   29:int InitGoogleTest(int* argc, char** argv);
+        -:   30:int RunAllTests();
+        -:   31:
+        -:   32:namespace internal {
+        -:   33:class TestRegistrar {
+        -:   34: public:
+        -:   35:  TestRegistrar(const char* suite_name, const char* test_name, std::function<void()> fn);
+        -:   36:};
+        -:   37:
+        -:   38:inline std::string ToString(bool value) {
+        -:   39:  return value ? "true" : "false";
+        -:   40:}
+        -:   41:
+        -:   42:inline std::string ToString(const char* value) {
+        -:   43:  return value == nullptr ? "<null>" : std::string(value);
+        -:   44:}
+        -:   45:
+        -:   46:inline std::string ToString(const std::string& value) {
+        -:   47:  return value;
+        -:   48:}
+        -:   49:
+        -:   50:template <typename T>
+function _ZN7testing8internal8ToStringIiEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_ called 0 returned 0% blocks executed 0%
+    #####:   51:std::string ToString(const T& value) {
+    #####:   52:  std::ostringstream oss;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   53:  oss << value;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   54:  return oss.str();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   55:}
+call    0 never executed
+call    1 never executed
+        -:   56:}  // namespace internal
+        -:   57:
+        -:   58:}  // namespace testing
+        -:   59:
+        -:   60:#define TEST(test_suite_name, test_name)                                             \
+        -:   61:  static void test_suite_name##_##test_name##_impl();                                \
+        -:   62:  static ::testing::internal::TestRegistrar test_suite_name##_##test_name##_registrar(\
+        -:   63:      #test_suite_name, #test_name, test_suite_name##_##test_name##_impl);           \
+        -:   64:  static void test_suite_name##_##test_name##_impl()
+        -:   65:
+        -:   66:#define EXPECT_TRUE(condition)                                                        \
+        -:   67:  do {                                                                                \
+        -:   68:    ::testing::GetState().total_assertions++;                                         \
+        -:   69:    if (!(condition)) {                                                               \
+        -:   70:      ::testing::RecordFailure(__FILE__, __LINE__,                                    \
+        -:   71:                               std::string("EXPECT_TRUE failed: ") + #condition);    \
+        -:   72:    }                                                                                 \
+        -:   73:  } while (0)
+        -:   74:
+        -:   75:#define EXPECT_FALSE(condition)                                                       \
+        -:   76:  do {                                                                                \
+        -:   77:    ::testing::GetState().total_assertions++;                                         \
+        -:   78:    if ((condition)) {                                                                \
+        -:   79:      ::testing::RecordFailure(__FILE__, __LINE__,                                    \
+        -:   80:                               std::string("EXPECT_FALSE failed: ") + #condition);   \
+        -:   81:    }                                                                                 \
+        -:   82:  } while (0)
+        -:   83:
+        -:   84:#define EXPECT_EQ(expected, actual) do {                                              \
+        -:   85:    auto gtest_expected_value = (expected);                                           \
+        -:   86:    auto gtest_actual_value = (actual);                                               \
+        -:   87:    ::testing::GetState().total_assertions++;                                         \
+        -:   88:    if (!(gtest_expected_value == gtest_actual_value)) {                              \
+        -:   89:      ::testing::RecordFailure(                                                       \
+        -:   90:          __FILE__, __LINE__,                                                         \
+        -:   91:          std::string("EXPECT_EQ failed: expected=") +                               \
+        -:   92:              ::testing::internal::ToString(gtest_expected_value) +                   \
+        -:   93:              ", actual=" + ::testing::internal::ToString(gtest_actual_value));       \
+        -:   94:    }                                                                                 \
+        -:   95:  } while (0)
+        -:   96:
+        -:   97:#endif
