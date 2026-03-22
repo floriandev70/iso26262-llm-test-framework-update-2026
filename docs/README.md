@@ -5,6 +5,9 @@ This directory stores study documentation and manuscript-related artifacts for t
 ## Current contents
 
 - `LLAIS1_paper_26.pdf` — current manuscript artifact associated with the study.
+- `REPLICATION_SPEC.md` — formal definition of what must be replicated from the historical baseline before extension experiments are considered valid.
+- `PAPER_TO_REPO_MAPPING.md` — mapping from paper-level concepts to repository artifacts, planned artifacts, and evidence structures.
+- `THREATS_TO_VALIDITY.md` — initial validity-risk register for the controlled replication and extension study.
 
 ## Documentation policy
 
