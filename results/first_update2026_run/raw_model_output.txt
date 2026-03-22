@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ASIL A - Google Test Cases for boolean_algebra.cpp</title>
+</head>
+<body>
+  <h1>ASIL A Coverage - Test Case Summary for <code>boolean_algebra.cpp</code></h1>
+
+  <h2>Test Case Table</h2>
+  <table border="1" cellspacing="0" cellpadding="4">
+    <thead>
+      <tr>
+        <th>Test case</th>
+        <th>Function</th>
+        <th>Inputs</th>
+        <th>Expected result</th>
+        <th>Requirement intent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Return0</td><td>return_0</td><td>none</td><td>0</td><td>Verify constant zero return.</td></tr>
+      <tr><td>Return1</td><td>return_1</td><td>none</td><td>1</td><td>Verify constant one return.</td></tr>
+      <tr><td>ReturnA_True</td><td>return_a</td><td>a=true</td><td>true</td><td>Verify identity for true.</td></tr>
+      <tr><td>ReturnA_False</td><td>return_a</td><td>a=false</td><td>false</td><td>Verify identity for false.</td></tr>
+      <tr><td>NotA_True</td><td>return_NOT_a</td><td>a=true</td><td>false</td><td>Verify negation for true.</td></tr>
+      <tr><td>NotA_False</td><td>return_NOT_a</td><td>a=false</td><td>true</td><td>Verify negation for false.</td></tr>
+      <tr><td>AorB_BothFalse</td><td>check_a_OR_b</td><td>false,false</td><td>false</td><td>Cover false OR path.</td></tr>
+      <tr><td>AorB_Atrue</td><td>check_a_OR_b</td><td>true,false</td><td>true</td><td>Cover left true OR path.</td></tr>
+      <tr><td>AorB_Btrue</td><td>check_a_OR_b</td><td>false,true</td><td>true</td><td>Cover right true OR path.</td></tr>
+      <tr><td>AorB_BothTrue</td><td>check_a_OR_b</td><td>true,true</td><td>true</td><td>Cover both true OR path.</td></tr>
+      <tr><td>AXorB_BothFalse</td><td>check_a_XOR_b</td><td>false,false</td><td>false</td><td>Cover XOR false case.</td></tr>
+      <tr><td>AXorB_Btrue</td><td>check_a_XOR_b</td><td>false,true</td><td>true</td><td>Cover XOR right true case.</td></tr>
+      <tr><td>AXorB_Atrue</td><td>check_a_XOR_b</td><td>true,false</td><td>true</td><td>Cover XOR left true case.</td></tr>
+      <tr><td>AXorB_BothTrue</td><td>check_a_XOR_b</td><td>true,true</td><td>false</td><td>Cover XOR both true case.</td></tr>
+      <tr><td>ANorB_BothFalse</td><td>check_a_NOR_b</td><td>false,false</td><td>true</td><td>Cover NOR false/false case.</td></tr>
+      <tr><td>ANorB_Btrue</td><td>check_a_NOR_b</td><td>false,true</td><td>false</td><td>Cover NOR right true case.</td></tr>
+      <tr><td>ANorB_Atrue</td><td>check_a_NOR_b</td><td>true,false</td><td>false</td><td>Cover NOR left true case.</td></tr>
+      <tr><td>ANorB_BothTrue</td><td>check_a_NOR_b</td><td>true,true</td><td>false</td><td>Cover NOR both true case.</td></tr>
+      <tr><td>AAndB_BothFalse</td><td>check_a_AND_b</td><td>false,false</td><td>false</td><td>Cover AND false case.</td></tr>
+      <tr><td>AAndB_Btrue</td><td>check_a_AND_b</td><td>false,true</td><td>false</td><td>Cover AND right-only true case.</td></tr>
+      <tr><td>AAndB_Atrue</td><td>check_a_AND_b</td><td>true,false</td><td>false</td><td>Cover AND left-only true case.</td></tr>
+      <tr><td>AAndB_BothTrue</td><td>check_a_AND_b</td><td>true,true</td><td>true</td><td>Cover AND true case.</td></tr>
+      <tr><td>ANandB_BothFalse</td><td>check_a_NAND_b</td><td>false,false</td><td>true</td><td>Cover NAND false/false case.</td></tr>
+      <tr><td>ANandB_Btrue</td><td>check_a_NAND_b</td><td>false,true</td><td>true</td><td>Cover NAND right-only true case.</td></tr>
+      <tr><td>ANandB_Atrue</td><td>check_a_NAND_b</td><td>true,false</td><td>true</td><td>Cover NAND left-only true case.</td></tr>
+      <tr><td>ANandB_BothTrue</td><td>check_a_NAND_b</td><td>true,true</td><td>false</td><td>Cover NAND true/true case.</td></tr>
+      <tr><td>AorBorC_AllFalse</td><td>check_a_OR_b_OR_c</td><td>false,false,false</td><td>false</td><td>Cover all-false OR chain.</td></tr>
+      <tr><td>AorBorC_Atrue</td><td>check_a_OR_b_OR_c</td><td>true,false,false</td><td>true</td><td>Cover A-driven OR chain.</td></tr>
+      <tr><td>AorBorC_Btrue</td><td>check_a_OR_b_OR_c</td><td>false,true,false</td><td>true</td><td>Cover B-driven OR chain.</td></tr>
+      <tr><td>AorBorC_Ctrue</td><td>check_a_OR_b_OR_c</td><td>false,false,true</td><td>true</td><td>Cover C-driven OR chain.</td></tr>
+      <tr><td>AorBorC_AllTrue</td><td>check_a_OR_b_OR_c</td><td>true,true,true</td><td>true</td><td>Cover all-true OR chain.</td></tr>
+      <tr><td>AorBAndC_AllFalse</td><td>check_a_OR_b_AND_c</td><td>false,false,false</td><td>false</td><td>Cover false path.</td></tr>
+      <tr><td>AorBAndC_Btrue</td><td>check_a_OR_b_AND_c</td><td>false,true,false</td><td>false</td><td>Cover unmet C condition.</td></tr>
+      <tr><td>AorBAndC_AllTrue</td><td>check_a_OR_b_AND_c</td><td>true,true,true</td><td>true</td><td>Cover all true path.</td></tr>
+      <tr><td>AorBAndC_Btrue_Ctrue</td><td>check_a_OR_b_AND_c</td><td>false,true,true</td><td>true</td><td>Cover B and C path.</td></tr>
+      <tr><td>AorBAndC_Atrue_Ctrue</td><td>check_a_OR_b_AND_c</td><td>true,false,true</td><td>true</td><td>Cover A and C path.</td></tr>
+      <tr><td>Aor_BAndC_AllFalse</td><td>check_a_OR__b_AND_c</td><td>false,false,false</td><td>false</td><td>Cover false path.</td></tr>
+      <tr><td>Aor_BAndC_Atrue</td><td>check_a_OR__b_AND_c</td><td>true,false,false</td><td>true</td><td>Cover A shortcut path.</td></tr>
+      <tr><td>Aor_BAndC_BAndCTrue</td><td>check_a_OR__b_AND_c</td><td>false,true,true</td><td>true</td><td>Cover B and C conjunction path.</td></tr>
+      <tr><td>Aor_BAndC_BTrue_CFalse</td><td>check_a_OR__b_AND_c</td><td>false,true,false</td><td>false</td><td>Cover unmet conjunction.</td></tr>
+      <tr><td>AAndBAndC_AllTrue</td><td>check_a_AND_b_AND_c</td><td>true,true,true</td><td>true</td><td>Cover all true path.</td></tr>
+      <tr><td>AAndBAndC_CFalse</td><td>check_a_AND_b_AND_c</td><td>true,true,false</td><td>false</td><td>Cover false due to C.</td></tr>
+      <tr><td>AAndBAndC_BFalse</td><td>check_a_AND_b_AND_c</td><td>true,false,true</td><td>false</td><td>Cover false due to B.</td></tr>
+      <tr><td>AAndBAndC_AFalse</td><td>check_a_AND_b_AND_c</td><td>false,true,true</td><td>false</td><td>Cover false due to A.</td></tr>
+      <tr><td>AAndBOrAAndC_AAndB</td><td>check_a_AND_b_OR_a_AND_c</td><td>true,true,false</td><td>true</td><td>Cover A&amp;B path.</td></tr>
+      <tr><td>AAndBOrAAndC_AAndC</td><td>check_a_AND_b_OR_a_AND_c</td><td>true,false,true</td><td>true</td><td>Cover A&amp;C path.</td></tr>
+      <tr><td>AAndBOrAAndC_OnlyA</td><td>check_a_AND_b_OR_a_AND_c</td><td>true,false,false</td><td>false</td><td>Cover lone A false result.</td></tr>
+      <tr><td>AAndBOrAAndC_AllTrue</td><td>check_a_AND_b_OR_a_AND_c</td><td>true,true,true</td><td>true</td><td>Cover combined true case.</td></tr>
+      <tr><td>AAndBOrAAndC_OnlyB</td><td>check_a_AND_b_OR_a_AND_c</td><td>false,true,false</td><td>false</td><td>Cover false without A.</td></tr>
+      <tr><td>AAndBXorAAndC_AAndB</td><td>check_a_AND_b_XOR_a_AND_c</td><td>true,true,false</td><td>true</td><td>Cover XOR via A&amp;B only.</td></tr>
+      <tr><td>AAndBXorAAndC_AAndC</td><td>check_a_AND_b_XOR_a_AND_c</td><td>true,false,true</td><td>true</td><td>Cover XOR via A&amp;C only.</td></tr>
+      <tr><td>AAndBXorAAndC_AFalse</td><td>check_a_AND_b_XOR_a_AND_c</td><td>false,true,true</td><td>false</td><td>Cover false without A.</td></tr>
+      <tr><td>AAndBXorAAndC_AllTrue</td><td>check_a_AND_b_XOR_a_AND_c</td><td>true,true,true</td><td>false</td><td>Cover equal true operands.</td></tr>
+      <tr><td>AAndBXorAAndNotC_AAndB_CFalse</td><td>check_a_AND_b_XOR_a_AND_NOT_c</td><td>true,true,false</td><td>true</td><td>Cover A&amp;B true only.</td></tr>
+      <tr><td>AAndBXorAAndNotC_AllTrue</td><td>check_a_AND_b_XOR_a_AND_NOT_c</td><td>true,true,true</td><td>false</td><td>Cover false when both terms align false/true.</td></tr>
+      <tr><td>AAndBXorAAndNotC_AAndNotC</td><td>check_a_AND_b_XOR_a_AND_NOT_c</td><td>true,false,false</td><td>true</td><td>Cover A&amp;!C true only.</td></tr>
+      <tr><td>AAndBXorAAndNotC_AFalse</td><td>check_a_AND_b_XOR_a_AND_NOT_c</td><td>false,true,false</td><td>false</td><td>Cover false without A.</td></tr>
+      <tr><td>AAndBXorAAndNotCOrD_AAndB</td><td>check_a_AND_b_XOR_a_AND_NOT_c_OR_d</td><td>true,true,false,false</td><td>true</td><td>Cover A&amp;B true only.</td></tr>
+      <tr><td>AAndBXorAAndNotCOrD_AllTrue</td><td>check_a_AND_b_XOR_a_AND_NOT_c_OR_d</td><td>true,true,true,true</td><td>false</td><td>Cover both intermediate terms true.</td></tr>
+      <tr><td>AAndBXorAAndNotCOrD_AAndNotCOrD</td><td>check_a_AND_b_XOR_a_AND_NOT_c_OR_d</td><td>true,false,false,true</td><td>true</td><td>Cover A&amp;(!C or D) true only.</td></tr>
+      <tr><td>AAndBXorAAndNotCOrD_AAndBOrC</td><td>check_a_AND_b_XOR_a_AND_NOT_c_OR_d</td><td>true,true,true,false</td><td>false</td><td>Cover false with second term false.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Google Test Implementation</h2>
+  <pre><code>#include &lt;gtest/gtest.h&gt;
+#include "includes/boolean_algebra.h"
+
+// return_0 and return_1
+TEST(BooleanAlgebra, Return0) { EXPECT_EQ(return_0(), 0); }
+TEST(BooleanAlgebra, Return1) { EXPECT_EQ(return_1(), 1); }
+
+// return_a and return_NOT_a
+TEST(BooleanAlgebra, ReturnA_True) { EXPECT_TRUE(return_a(true)); }
+TEST(BooleanAlgebra, ReturnA_False) { EXPECT_FALSE(return_a(false)); }
+TEST(BooleanAlgebra, NotA_True) { EXPECT_FALSE(return_NOT_a(true)); }
+TEST(BooleanAlgebra, NotA_False) { EXPECT_TRUE(return_NOT_a(false)); }
+
+// check_a_OR_b
+TEST(BooleanAlgebra, AorB_BothFalse) { EXPECT_FALSE(check_a_OR_b(false, false)); }
+TEST(BooleanAlgebra, AorB_Atrue) { EXPECT_TRUE(check_a_OR_b(true, false)); }
+TEST(BooleanAlgebra, AorB_Btrue) { EXPECT_TRUE(check_a_OR_b(false, true)); }
+TEST(BooleanAlgebra, AorB_BothTrue) { EXPECT_TRUE(check_a_OR_b(true, true)); }
+
+// check_a_XOR_b
+TEST(BooleanAlgebra, AXorB_BothFalse) { EXPECT_FALSE(check_a_XOR_b(false, false)); }
+TEST(BooleanAlgebra, AXorB_Btrue) { EXPECT_TRUE(check_a_XOR_b(false, true)); }
+TEST(BooleanAlgebra, AXorB_Atrue) { EXPECT_TRUE(check_a_XOR_b(true, false)); }
+TEST(BooleanAlgebra, AXorB_BothTrue) { EXPECT_FALSE(check_a_XOR_b(true, true)); }
+
+// check_a_NOR_b
+TEST(BooleanAlgebra, ANorB_BothFalse) { EXPECT_TRUE(check_a_NOR_b(false, false)); }
+TEST(BooleanAlgebra, ANorB_Btrue) { EXPECT_FALSE(check_a_NOR_b(false, true)); }
+TEST(BooleanAlgebra, ANorB_Atrue) { EXPECT_FALSE(check_a_NOR_b(true, false)); }
+TEST(BooleanAlgebra, ANorB_BothTrue) { EXPECT_FALSE(check_a_NOR_b(true, true)); }
+
+// check_a_AND_b
+TEST(BooleanAlgebra, AAndB_BothFalse) { EXPECT_FALSE(check_a_AND_b(false, false)); }
+TEST(BooleanAlgebra, AAndB_Btrue) { EXPECT_FALSE(check_a_AND_b(false, true)); }
+TEST(BooleanAlgebra, AAndB_Atrue) { EXPECT_FALSE(check_a_AND_b(true, false)); }
+TEST(BooleanAlgebra, AAndB_BothTrue) { EXPECT_TRUE(check_a_AND_b(true, true)); }
+
+// check_a_NAND_b
+TEST(BooleanAlgebra, ANandB_BothFalse) { EXPECT_TRUE(check_a_NAND_b(false, false)); }
+TEST(BooleanAlgebra, ANandB_Btrue) { EXPECT_TRUE(check_a_NAND_b(false, true)); }
+TEST(BooleanAlgebra, ANandB_Atrue) { EXPECT_TRUE(check_a_NAND_b(true, false)); }
+TEST(BooleanAlgebra, ANandB_BothTrue) { EXPECT_FALSE(check_a_NAND_b(true, true)); }
+
+// check_a_OR_b_OR_c
+TEST(BooleanAlgebra, AorBorC_AllFalse) { EXPECT_FALSE(check_a_OR_b_OR_c(false, false, false)); }
+TEST(BooleanAlgebra, AorBorC_Atrue) { EXPECT_TRUE(check_a_OR_b_OR_c(true, false, false)); }
+TEST(BooleanAlgebra, AorBorC_Btrue) { EXPECT_TRUE(check_a_OR_b_OR_c(false, true, false)); }
+TEST(BooleanAlgebra, AorBorC_Ctrue) { EXPECT_TRUE(check_a_OR_b_OR_c(false, false, true)); }
+TEST(BooleanAlgebra, AorBorC_AllTrue) { EXPECT_TRUE(check_a_OR_b_OR_c(true, true, true)); }
+
+// check_a_OR_b_AND_c
+TEST(BooleanAlgebra, AorBAndC_AllFalse) { EXPECT_FALSE(check_a_OR_b_AND_c(false, false, false)); }
+TEST(BooleanAlgebra, AorBAndC_Btrue) { EXPECT_FALSE(check_a_OR_b_AND_c(false, true, false)); }
+TEST(BooleanAlgebra, AorBAndC_AllTrue) { EXPECT_TRUE(check_a_OR_b_AND_c(true, true, true)); }
+TEST(BooleanAlgebra, AorBAndC_Btrue_Ctrue) { EXPECT_TRUE(check_a_OR_b_AND_c(false, true, true)); }
+TEST(BooleanAlgebra, AorBAndC_Atrue_Ctrue) { EXPECT_TRUE(check_a_OR_b_AND_c(true, false, true)); }
+
+// check_a_OR__b_AND_c
+TEST(BooleanAlgebra, Aor_BAndC_AllFalse) { EXPECT_FALSE(check_a_OR__b_AND_c(false, false, false)); }
+TEST(BooleanAlgebra, Aor_BAndC_Atrue) { EXPECT_TRUE(check_a_OR__b_AND_c(true, false, false)); }
+TEST(BooleanAlgebra, Aor_BAndC_BAndCTrue) { EXPECT_TRUE(check_a_OR__b_AND_c(false, true, true)); }
+TEST(BooleanAlgebra, Aor_BAndC_BTrue_CFalse) { EXPECT_FALSE(check_a_OR__b_AND_c(false, true, false)); }
+
+// check_a_AND_b_AND_c
+TEST(BooleanAlgebra, AAndBAndC_AllTrue) { EXPECT_TRUE(check_a_AND_b_AND_c(true, true, true)); }
+TEST(BooleanAlgebra, AAndBAndC_CFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(true, true, false)); }
+TEST(BooleanAlgebra, AAndBAndC_BFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(true, false, true)); }
+TEST(BooleanAlgebra, AAndBAndC_AFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(false, true, true)); }
+
+// check_a_AND_b_OR_a_AND_c
+TEST(BooleanAlgebra, AAndBOrAAndC_AAndB) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, true, false)); }
+TEST(BooleanAlgebra, AAndBOrAAndC_AAndC) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, false, true)); }
+TEST(BooleanAlgebra, AAndBOrAAndC_OnlyA) { EXPECT_FALSE(check_a_AND_b_OR_a_AND_c(true, false, false)); }
+TEST(BooleanAlgebra, AAndBOrAAndC_AllTrue) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, true, true)); }
+TEST(BooleanAlgebra, AAndBOrAAndC_OnlyB) { EXPECT_FALSE(check_a_AND_b_OR_a_AND_c(false, true, false)); }
+
+// check_a_AND_b_XOR_a_AND_c
+TEST(BooleanAlgebra, AAndBXorAAndC_AAndB) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_c(true, true, false)); }
+TEST(BooleanAlgebra, AAndBXorAAndC_AAndC) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_c(true, false, true)); }
+TEST(BooleanAlgebra, AAndBXorAAndC_AFalse) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_c(false, true, true)); }
+TEST(BooleanAlgebra, AAndBXorAAndC_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_c(true, true, true)); }
+
+// check_a_AND_b_XOR_a_AND_NOT_c
+TEST(BooleanAlgebra, AAndBXorAAndNotC_AAndB_CFalse) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c(true, true, false)); }
+TEST(BooleanAlgebra, AAndBXorAAndNotC_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c(true, true, true)); }
+TEST(BooleanAlgebra, AAndBXorAAndNotC_AAndNotC) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c(true, false, false)); }
+TEST(BooleanAlgebra, AAndBXorAAndNotC_AFalse) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c(false, true, false)); }
+
+// check_a_AND_b_XOR_a_AND_NOT_c_OR_d
+TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndB) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, false, false)); }
+TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, true)); }
+TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndNotCOrD) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, false, false, true)); }
+TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndBOrC) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, false)); }</code></pre>
+</body>
+</html>

@@ -1,0 +1,2 @@
+$ ctest --test-dir /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run --output-on-failure
+Test execution not attempted because the documented configure/build step did not complete successfully. See build.log for the blocking error.
