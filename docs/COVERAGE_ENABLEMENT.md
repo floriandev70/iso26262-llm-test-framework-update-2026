@@ -38,7 +38,7 @@ gcovr -r <repo_root> <build_dir> --html --html-details -o <coverage_html>
 
 Internally, it shells out to the already-installed GCC `gcov` tool and writes a single HTML report.
 
-## Why additional tests were needed
+## Why add aditional tests were needed
 
 The preserved generated test file only exercised `boolean_algebra.cpp`.
 

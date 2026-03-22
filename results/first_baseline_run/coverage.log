@@ -1,3 +1,9 @@
+Coverage tool: gcovr-compatible-wrapper 0.1
+Run id: first_baseline_run
+Coverage command: "/workspace/iso26262-llm-test-framework-update-2026/tools/bin/gcovr" -r /workspace/iso26262-llm-test-framework-update-2026 /workspace/iso26262-llm-test-framework-update-2026/build/first_baseline_run --html --html-details -o /workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/coverage.html
+Associated test log: results/first_baseline_run/test_execution.log
+Note: failing assertions were preserved; coverage was executed after the instrumented test run and did not alter findings.
+
 baseline/Lab/boolean_algebra.cpp
   lines: 100.00% of 87
   branches: 100.00% of 106
@@ -13,6 +19,16 @@ baseline/Lab/real_world.cpp
   lines: 93.48% of 46
   branches: 100.00% of 25
   taken: 92.00% of 25
+  lines: 0.00% of 162
+baseline/Lab/math_lib.cpp
+  lines: 0.00% of 160
+  branches: 0.00% of 148
+  taken: 0.00% of 148
+  calls: 0.00% of 2
+baseline/Lab/real_world.cpp
+  lines: 0.00% of 46
+  branches: 0.00% of 25
+  taken: 0.00% of 25
 results/first_baseline_run/generated/generated_test_file.cpp
   lines: 100.00% of 61
   branches: 30.08% of 512
