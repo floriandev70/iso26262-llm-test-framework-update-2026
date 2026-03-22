@@ -1,0 +1,167 @@
+#!/usr/bin/env python3
+import argparse
+import html
+import os
+import re
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+VERSION = "gcovr-compatible-wrapper 0.1"
+
+
+def parse_args(argv):
+    parser = argparse.ArgumentParser(description="Minimal repo-local gcovr-compatible HTML generator")
+    parser.add_argument("-r", "--root", required=False, default=".")
+    parser.add_argument("build_dirs", nargs="*")
+    parser.add_argument("--html", action="store_true")
+    parser.add_argument("--html-details", action="store_true")
+    parser.add_argument("-o", "--output", required=False)
+    parser.add_argument("--version", action="store_true")
+    args = parser.parse_args(argv)
+    if args.version:
+      print(VERSION)
+      sys.exit(0)
+    if not args.html:
+      raise SystemExit("This wrapper currently supports --html output only.")
+    if not args.output:
+      raise SystemExit("An output file must be supplied with -o/--output.")
+    if not args.build_dirs:
+      raise SystemExit("At least one build directory must be supplied.")
+    return args
+
+
+def under_root(path: Path, root: Path) -> bool:
+    try:
+        path.resolve().relative_to(root.resolve())
+        return True
+    except Exception:
+        return False
+
+
+def run_gcov(gcno_path: Path, cwd: Path):
+    proc = subprocess.run(
+        ["gcov", "-b", "-c", str(gcno_path)],
+        cwd=str(cwd),
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    return proc.returncode, proc.stdout + proc.stderr
+
+
+def parse_gcov_stdout(text: str, root: Path):
+    metrics = {}
+    current = None
+    for line in text.splitlines():
+        if line.startswith("File '") and line.endswith("'"):
+            candidate = Path(line[len("File '"):-1])
+            current = candidate if under_root(candidate, root) else None
+            if current is not None:
+                metrics.setdefault(current, {})
+        elif current is not None:
+            if line.startswith("Lines executed:"):
+                metrics[current]["lines"] = line.split(":", 1)[1].strip()
+            elif line.startswith("Branches executed:"):
+                metrics[current]["branches"] = line.split(":", 1)[1].strip()
+            elif line.startswith("Taken at least once:"):
+                metrics[current]["taken"] = line.split(":", 1)[1].strip()
+            elif line.startswith("Calls executed:"):
+                metrics[current]["calls"] = line.split(":", 1)[1].strip()
+    return metrics
+
+
+def gcov_to_html_lines(gcov_text: str):
+    rendered = []
+    for raw in gcov_text.splitlines():
+        m = re.match(r"\s*([^:]+):\s*([0-9]+):(.*)$", raw)
+        if not m:
+            continue
+        count, line_no, code = m.groups()
+        count = count.strip()
+        if count.startswith("-"):
+            css = "neutral"
+        elif "#" in count or count == "=====":
+            css = "miss"
+        else:
+            css = "hit"
+        rendered.append(
+            f"<span class='{css}'>{html.escape(count):>12} : {line_no:>4} : {html.escape(code)}</span>"
+        )
+    return "\n".join(rendered)
+
+
+def main(argv):
+    args = parse_args(argv)
+    root = Path(args.root).resolve()
+    output = Path(args.output).resolve()
+    build_dirs = [Path(p).resolve() for p in args.build_dirs]
+
+    repo_metrics = {}
+    repo_details = {}
+    for build_dir in build_dirs:
+        gcno_files = sorted(build_dir.rglob("*.gcno"))
+        for gcno in gcno_files:
+            with tempfile.TemporaryDirectory(prefix="gcovr-wrapper-") as tmp:
+                tmpdir = Path(tmp)
+                code, out = run_gcov(gcno, tmpdir)
+                if code != 0:
+                    print(out, file=sys.stderr)
+                    continue
+                metrics = parse_gcov_stdout(out, root)
+                for source_path, vals in metrics.items():
+                    repo_metrics[source_path] = vals
+                    gcov_file = tmpdir / f"{source_path.name}.gcov"
+                    if gcov_file.exists():
+                        repo_details[source_path] = gcov_file.read_text()
+
+    rows = []
+    for source_path in sorted(repo_metrics):
+        vals = repo_metrics[source_path]
+        rows.append(
+            "<tr>"
+            f"<td><code>{html.escape(str(source_path.relative_to(root)))}</code></td>"
+            f"<td>{html.escape(vals.get('lines', 'n/a'))}</td>"
+            f"<td>{html.escape(vals.get('branches', 'n/a'))}</td>"
+            f"<td>{html.escape(vals.get('taken', 'n/a'))}</td>"
+            f"<td>{html.escape(vals.get('calls', 'n/a'))}</td>"
+            "</tr>"
+        )
+
+    parts = [
+        "<!doctype html><html><head><meta charset='utf-8'>",
+        f"<title>{html.escape(output.name)}</title>",
+        "<style>body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:2rem;}"
+        "table{border-collapse:collapse;margin:1rem 0;width:100%;max-width:1100px;}"
+        "th,td{border:1px solid #ccc;padding:.4rem .6rem;text-align:left;vertical-align:top;}"
+        "pre{background:#f6f8fa;padding:1rem;overflow:auto;white-space:pre-wrap;}"
+        ".hit{background:#e6ffed;} .miss{background:#ffeef0;} .neutral{color:#666;}"
+        "code{background:#f6f8fa;padding:.1rem .25rem;}</style></head><body>",
+        "<h1>Coverage report</h1>",
+        f"<p>Generated by <code>{html.escape(VERSION)}</code>.</p>",
+        "<table><thead><tr><th>File</th><th>Lines executed</th><th>Branches executed</th><th>Taken at least once</th><th>Calls executed</th></tr></thead><tbody>",
+        *rows,
+        "</tbody></table>",
+    ]
+
+    if args.html_details:
+        for source_path in sorted(repo_details):
+            parts.append(f"<h2><code>{html.escape(str(source_path.relative_to(root)))}</code></h2>")
+            parts.append(f"<pre>{gcov_to_html_lines(repo_details[source_path])}</pre>")
+
+    parts.append("</body></html>")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("".join(parts))
+
+    for source_path in sorted(repo_metrics):
+        vals = repo_metrics[source_path]
+        print(f"{source_path.relative_to(root)}")
+        for key in ["lines", "branches", "taken", "calls"]:
+            if key in vals:
+                print(f"  {key}: {vals[key]}")
+    print(f"HTML report written to {output}")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
