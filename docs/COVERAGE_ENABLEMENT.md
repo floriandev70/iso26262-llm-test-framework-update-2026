@@ -2,7 +2,7 @@
 
 ## Goal
 
-Enable coverage reporting for the preserved baseline/update runs without changing prompts, source under test, or generated tests.
+Enable coverage reporting for the preserved baseline/update runs without changing prompts or source-under-test files, while ensuring that all baseline `.cpp` modules are actually exercised by tests.
 
 ## Constraint encountered
 
@@ -38,14 +38,35 @@ gcovr -r <repo_root> <build_dir> --html --html-details -o <coverage_html>
 
 Internally, it shells out to the already-installed GCC `gcov` tool and writes a single HTML report.
 
+## Why add aditional tests were needed
+
+The preserved generated test file only exercised `boolean_algebra.cpp`.
+
+That left:
+- `baseline/Lab/math_lib.cpp`; and
+- `baseline/Lab/real_world.cpp`
+
+compiled but uncovered.
+
+To satisfy the requirement that all baseline `.cpp` files are covered by tests, a deterministic repository-authored supplemental test file was added at:
+
+```text
+tests/supplemental_all_cpp_tests.cpp
+```
+
+This supplemental file:
+- does **not** modify the preserved generated tests;
+- is linked alongside them during the executable build; and
+- exists specifically to exercise the remaining baseline modules for measurement.
+
 ## Script adjustments needed to execute the preserved runs
 
-To execute coverage on the existing run artifacts without changing scientific inputs, `scripts/run_first_baseline.sh` was updated to:
+To execute coverage on the existing run artifacts without changing prompts, source-under-test files, or the preserved generated tests, `scripts/run_first_baseline.sh` was updated to:
 
 1. prefer the repo-local `tools/bin/gcovr` when no system `gcovr` is available;
 2. avoid failing when source/destination artifact paths are the same preserved file;
 3. preserve test failures while still continuing on to the coverage step; and
-4. keep using the existing baseline-compatible local GoogleTest shim path.
+4. include `tests/supplemental_all_cpp_tests.cpp` in the generated-test executable so `math_lib.cpp` and `real_world.cpp` are also exercised.
 
 These are tooling/orchestration changes only.
 
@@ -66,10 +87,12 @@ ctest --test-dir build/<run_id> --output-on-failure
 
 1. **This is not upstream `gcovr`.**
    - It is a repo-local compatibility wrapper because package installation remained blocked.
-2. **Failing assertions remain real findings.**
-   - Coverage execution continues after failing tests only so that measurement artifacts are preserved; it does not normalize the failures away.
-3. **Coverage comparability still requires care.**
-   - The first baseline/update pair now both have coverage artifacts, but the broader workflow still includes documented model/tooling deviations outside the scope of coverage enablement.
+2. **Supplemental tests are repo-authored, not model-generated.**
+   - They were added to cover `math_lib.cpp` and `real_world.cpp` explicitly, while leaving the preserved generated tests unchanged.
+3. **Failing assertions remain real findings.**
+   - The original 4 failing generated tests still fail; the added supplemental tests do not “fix away” those findings.
+4. **Coverage comparability still requires care.**
+   - The first baseline/update pair now both have coverage artifacts for all baseline `.cpp` modules, but broader model/workflow/tooling deviations remain outside the scope of this enablement step.
 
 ## Required update-run artifacts
 

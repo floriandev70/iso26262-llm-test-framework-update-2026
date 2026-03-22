@@ -9,6 +9,16 @@ baseline/Lab/boolean_algebra.cpp
   branches: 100.00% of 106
   taken: 97.17% of 106
 baseline/Lab/includes/math_lib.h
+  lines: 91.98% of 162
+baseline/Lab/math_lib.cpp
+  lines: 91.88% of 160
+  branches: 100.00% of 148
+  taken: 77.70% of 148
+  calls: 100.00% of 2
+baseline/Lab/real_world.cpp
+  lines: 93.48% of 46
+  branches: 100.00% of 25
+  taken: 92.00% of 25
   lines: 0.00% of 162
 baseline/Lab/math_lib.cpp
   lines: 0.00% of 160
@@ -24,6 +34,11 @@ results/first_baseline_run/generated/generated_test_file.cpp
   branches: 30.08% of 512
   taken: 15.04% of 512
   calls: 24.78% of 573
+tests/supplemental_all_cpp_tests.cpp
+  lines: 100.00% of 106
+  branches: 29.87% of 1232
+  taken: 14.94% of 1232
+  calls: 9.86% of 1298
 third_party/gtest_shim/include/gtest/gtest.h
 third_party/gtest_shim/src/gtest_shim.cpp
   lines: 87.50% of 40

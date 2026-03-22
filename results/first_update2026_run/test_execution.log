@@ -1,8 +1,8 @@
 Internal ctest changing into directory: /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run
 Test project /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run
     Start 1: first_baseline_generated_tests
-1/1 Test #1: first_baseline_generated_tests ...***Failed    0.03 sec
-[==========] Running 61 tests from 61 test cases.
+1/1 Test #1: first_baseline_generated_tests ...***Failed    0.01 sec
+[==========] Running 103 tests from 103 test cases.
 [ RUN      ] BooleanAlgebra.Return0
 [       OK ] BooleanAlgebra.Return0
 [ RUN      ] BooleanAlgebra.Return1
@@ -133,14 +133,98 @@ EXPECT_TRUE failed: check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, false, false)
 /workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp:93: Failure
 EXPECT_FALSE failed: check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, false)
 [  FAILED  ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndBOrC
-[==========] 61 tests ran.
-[  PASSED  ] 57 tests.
+[ RUN      ] MathLib.AddValid
+[       OK ] MathLib.AddValid
+[ RUN      ] MathLib.AddRejectsOutOfRange
+[       OK ] MathLib.AddRejectsOutOfRange
+[ RUN      ] MathLib.AddRejectsOverflowGuard
+[       OK ] MathLib.AddRejectsOverflowGuard
+[ RUN      ] MathLib.SubtractValid
+[       OK ] MathLib.SubtractValid
+[ RUN      ] MathLib.SubtractRejectsOutOfRange
+[       OK ] MathLib.SubtractRejectsOutOfRange
+[ RUN      ] MathLib.SubtractRejectsAToBSwap
+[       OK ] MathLib.SubtractRejectsAToBSwap
+[ RUN      ] MathLib.MultiplyValid
+[       OK ] MathLib.MultiplyValid
+[ RUN      ] MathLib.MultiplyRejectsOutOfRange
+[       OK ] MathLib.MultiplyRejectsOutOfRange
+[ RUN      ] MathLib.MultiplyRejectsOverflowGuard
+[       OK ] MathLib.MultiplyRejectsOverflowGuard
+[ RUN      ] MathLib.DivideValid
+[       OK ] MathLib.DivideValid
+[ RUN      ] MathLib.DivideRejectsZeroDivisor
+[       OK ] MathLib.DivideRejectsZeroDivisor
+[ RUN      ] MathLib.DivideRejectsOutOfRange
+[       OK ] MathLib.DivideRejectsOutOfRange
+[ RUN      ] MathLib.FactorialHandlesBaseCase
+[       OK ] MathLib.FactorialHandlesBaseCase
+[ RUN      ] MathLib.FactorialValidLoop
+[       OK ] MathLib.FactorialValidLoop
+[ RUN      ] MathLib.FactorialRejectsInvalid
+[       OK ] MathLib.FactorialRejectsInvalid
+[ RUN      ] MathLib.FactorialRejectsOverflowGuard
+[       OK ] MathLib.FactorialRejectsOverflowGuard
+[ RUN      ] MathLib.FibonacciHandlesBaseCases
+[       OK ] MathLib.FibonacciHandlesBaseCases
+[ RUN      ] MathLib.FibonacciValidLoop
+[       OK ] MathLib.FibonacciValidLoop
+[ RUN      ] MathLib.FibonacciRejectsInvalid
+[       OK ] MathLib.FibonacciRejectsInvalid
+[ RUN      ] MathLib.FibonacciRejectsOverflowGuard
+[       OK ] MathLib.FibonacciRejectsOverflowGuard
+[ RUN      ] MathLib.PrimeNumberRejectsInvalid
+[       OK ] MathLib.PrimeNumberRejectsInvalid
+[ RUN      ] MathLib.PrimeNumberHandlesNonPrimeBaseCase
+[       OK ] MathLib.PrimeNumberHandlesNonPrimeBaseCase
+[ RUN      ] MathLib.PrimeNumberHandlesTwo
+[       OK ] MathLib.PrimeNumberHandlesTwo
+[ RUN      ] MathLib.PrimeNumberRejectsEvenComposite
+[       OK ] MathLib.PrimeNumberRejectsEvenComposite
+[ RUN      ] MathLib.PrimeNumberRejectsOddComposite
+[       OK ] MathLib.PrimeNumberRejectsOddComposite
+[ RUN      ] MathLib.PrimeNumberAcceptsPrime
+[       OK ] MathLib.PrimeNumberAcceptsPrime
+[ RUN      ] MathLib.AddRefValidAndInvalid
+[       OK ] MathLib.AddRefValidAndInvalid
+[ RUN      ] MathLib.SubtractRefValidAndInvalid
+[       OK ] MathLib.SubtractRefValidAndInvalid
+[ RUN      ] MathLib.MultiplyRefValidAndInvalid
+[       OK ] MathLib.MultiplyRefValidAndInvalid
+[ RUN      ] MathLib.DivideRefValidAndInvalid
+[       OK ] MathLib.DivideRefValidAndInvalid
+[ RUN      ] MathLib.PrimeNumberRefCases
+[       OK ] MathLib.PrimeNumberRefCases
+[ RUN      ] MathLib.FibonacciRefCases
+[       OK ] MathLib.FibonacciRefCases
+[ RUN      ] MathLib.MyFuncReturnsFloatThree
+[       OK ] MathLib.MyFuncReturnsFloatThree
+[ RUN      ] MathLib.TempCalcPresWacolTemp48VNominal
+[       OK ] MathLib.TempCalcPresWacolTemp48VNominal
+[ RUN      ] RealWorld.CheckAbortFalsePath
+[       OK ] RealWorld.CheckAbortFalsePath
+[ RUN      ] RealWorld.CheckAbortTruePaths
+[       OK ] RealWorld.CheckAbortTruePaths
+[ RUN      ] RealWorld.AutomMcuStateMachineCurrentStateRequest
+[       OK ] RealWorld.AutomMcuStateMachineCurrentStateRequest
+[ RUN      ] RealWorld.AutomMcuStateMachineOffToRun
+[       OK ] RealWorld.AutomMcuStateMachineOffToRun
+[ RUN      ] RealWorld.AutomMcuStateMachineOffRejectsInvalidRequest
+[       OK ] RealWorld.AutomMcuStateMachineOffRejectsInvalidRequest
+[ RUN      ] RealWorld.AutomMcuStateMachineRunTransitions
+[       OK ] RealWorld.AutomMcuStateMachineRunTransitions
+[ RUN      ] RealWorld.AutomMcuStateMachineSleepTransitions
+[       OK ] RealWorld.AutomMcuStateMachineSleepTransitions
+[ RUN      ] RealWorld.AutomMcuStateMachineRejectsUnknownCurrentState
+[       OK ] RealWorld.AutomMcuStateMachineRejectsUnknownCurrentState
+[==========] 103 tests ran.
+[  PASSED  ] 99 tests.
 [  FAILED  ] 4 tests.
 
 
 0% tests passed, 1 tests failed out of 1
 
-Total Test time (real) =   0.03 sec
+Total Test time (real) =   0.02 sec
 
 The following tests FAILED:
 	  1 - first_baseline_generated_tests (Failed)

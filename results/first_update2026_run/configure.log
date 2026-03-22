@@ -10,6 +10,6 @@
 -- Check for working CXX compiler: /usr/bin/c++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (1.7s)
+-- Configuring done (1.2s)
 -- Generating done (0.0s)
 -- Build files have been written to: /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run

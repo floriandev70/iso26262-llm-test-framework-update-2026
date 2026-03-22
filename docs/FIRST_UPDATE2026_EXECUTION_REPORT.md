@@ -95,14 +95,15 @@ This removes the previous proxy/download blocker from the update-2026 run.
 
 - Result: **executed, but failing**.
 - `ctest` executed one test binary: `first_baseline_generated_tests`.
-- The binary ran **61 tests** and reported **57 passed** and **4 failed**.
+- In the later all-module coverage rerun, that binary ran **103 tests** and reported **99 passed** and **4 failed**.
+- The original generated subset still accounts for the same four preserved failing tests; the additional passing tests come from the repo-authored supplemental module-coverage file `tests/supplemental_all_cpp_tests.cpp`.
 - The four failing generated tests were:
   1. `BooleanAlgebra.AAndBXorAAndNotC_AAndB_CFalse`
   2. `BooleanAlgebra.AAndBXorAAndNotC_AllTrue`
   3. `BooleanAlgebra.AAndBXorAAndNotCOrD_AAndB`
   4. `BooleanAlgebra.AAndBXorAAndNotCOrD_AAndBOrC`
 
-This means the generated test suite is now compiled and executable, and its preserved failures are part of the evidence rather than a tooling block.
+This means the generated test suite is now compiled and executable, its preserved failures remain part of the evidence, and the later coverage rerun broadens the executable scope to `math_lib.cpp` and `real_world.cpp` via a separate repo-authored supplemental test file rather than by editing the preserved generated tests.
 
 ## Coverage result
 
