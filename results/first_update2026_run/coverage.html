@@ -1,0 +1,234 @@
+<!doctype html><html><head><meta charset='utf-8'><title>first_update2026_run coverage</title><style>body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:2rem;} table{border-collapse:collapse;margin:1rem 0;width:100%;max-width:900px;} th,td{border:1px solid #ccc;padding:.4rem .6rem;text-align:left;vertical-align:top;} pre{background:#f6f8fa;padding:1rem;overflow:auto;white-space:pre-wrap;} .hit{background:#e6ffed;} .miss{background:#ffeef0;} .neutral{color:#666;} code{background:#f6f8fa;padding:.1rem .25rem;} </style></head><body><h1>Coverage execution report for <code>first_update2026_run</code></h1><p>This HTML report was generated locally from <code>gcov</code> outputs after the preserved generated tests were rebuilt and re-executed with coverage instrumentation. Failing assertions were preserved and did not prevent measurement.</p><h2>Summary</h2><table><thead><tr><th>Scope</th><th>Lines executed</th><th>Branches executed</th><th>Taken at least once</th><th>Calls executed</th></tr></thead><tbody><tr><td>Source under test</td><td>100.00% of 87</td><td>100.00% of 106</td><td>97.17% of 106</td><td>n/a</td></tr><tr><td>Generated tests</td><td>100.00% of 61</td><td>30.08% of 512</td><td>15.04% of 512</td><td>24.78% of 573</td></tr></tbody></table><p><strong>Limitation:</strong> <code>gcovr</code> installation remained blocked by environment proxy/network restrictions, so this report is a preserved <code>gcov</code>-based fallback rather than a native <code>gcovr --html</code> artifact.</p><h2>Source under test: <code>baseline/Lab/boolean_algebra.cpp</code></h2><pre><span class='neutral'>           - :    0 : Source:/workspace/iso26262-llm-test-framework-update-2026/baseline/Lab/boolean_algebra.cpp</span>
+<span class='neutral'>           - :    0 : Graph:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/baseline/Lab/CMakeFiles/baseline_lab.dir/boolean_algebra.cpp.gcno</span>
+<span class='neutral'>           - :    0 : Data:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/baseline/Lab/CMakeFiles/baseline_lab.dir/boolean_algebra.cpp.gcda</span>
+<span class='neutral'>           - :    0 : Runs:2</span>
+<span class='neutral'>           - :    1 : #include &quot;includes/boolean_algebra.h&quot;</span>
+<span class='neutral'>           - :    2 : </span>
+<span class='hit'>           2 :    3 : int return_0(void) { return 0; }</span>
+<span class='hit'>           2 :    4 : int return_1(void) { return 1; }</span>
+<span class='hit'>           4 :    5 : bool return_a(bool a) { return a; }</span>
+<span class='hit'>           4 :    6 : bool return_NOT_a(bool a) { return !a; }</span>
+<span class='neutral'>           - :    7 : </span>
+<span class='hit'>           8 :    8 : bool check_a_OR_b(bool a, bool b) {</span>
+<span class='hit'>           8 :    9 :   bool check = false;</span>
+<span class='hit'>           8 :   10 :   if ((a == true) || (b == true)) {</span>
+<span class='hit'>           6 :   11 :     check = true;</span>
+<span class='neutral'>           - :   12 :   }</span>
+<span class='hit'>           8 :   13 :   return check;</span>
+<span class='neutral'>           - :   14 : }</span>
+<span class='neutral'>           - :   15 : </span>
+<span class='hit'>           8 :   16 : bool check_a_XOR_b(bool a, bool b) {</span>
+<span class='hit'>           8 :   17 :   bool check = false;</span>
+<span class='hit'>           8 :   18 :   if (((a == true) &amp;&amp; (b == false)) || ((a == false) &amp;&amp; (b == true))) {</span>
+<span class='hit'>           4 :   19 :     check = true;</span>
+<span class='neutral'>           - :   20 :   }</span>
+<span class='hit'>           8 :   21 :   return check;</span>
+<span class='neutral'>           - :   22 : }</span>
+<span class='neutral'>           - :   23 : </span>
+<span class='hit'>           8 :   24 : bool check_a_NOR_b(bool a, bool b) {</span>
+<span class='hit'>           8 :   25 :   bool check = false;</span>
+<span class='hit'>           8 :   26 :   if ((a == true) || (b == true)) {</span>
+<span class='hit'>           6 :   27 :     check = true;</span>
+<span class='neutral'>           - :   28 :   }</span>
+<span class='hit'>           8 :   29 :   return !check;</span>
+<span class='neutral'>           - :   30 : }</span>
+<span class='neutral'>           - :   31 : </span>
+<span class='hit'>           8 :   32 : bool check_a_AND_b(bool a, bool b) {</span>
+<span class='hit'>           8 :   33 :   bool check = false;</span>
+<span class='hit'>           8 :   34 :   if ((a == true) &amp;&amp; (b == true)) {</span>
+<span class='hit'>           2 :   35 :     check = true;</span>
+<span class='neutral'>           - :   36 :   }</span>
+<span class='hit'>           8 :   37 :   return check;</span>
+<span class='neutral'>           - :   38 : }</span>
+<span class='neutral'>           - :   39 : </span>
+<span class='hit'>           8 :   40 : bool check_a_NAND_b(bool a, bool b) {</span>
+<span class='hit'>           8 :   41 :   bool check = false;</span>
+<span class='hit'>           8 :   42 :   if ((a == true) &amp;&amp; (b == true)) {</span>
+<span class='hit'>           2 :   43 :     check = true;</span>
+<span class='neutral'>           - :   44 :   }</span>
+<span class='hit'>           8 :   45 :   return !check;</span>
+<span class='neutral'>           - :   46 : }</span>
+<span class='neutral'>           - :   47 : </span>
+<span class='hit'>          10 :   48 : bool check_a_OR_b_OR_c(bool a, bool b, bool c) {</span>
+<span class='hit'>          10 :   49 :   bool check = false;</span>
+<span class='hit'>          10 :   50 :   if ((a == true) || (b == true) || (c == true)) {</span>
+<span class='hit'>           8 :   51 :     check = true;</span>
+<span class='neutral'>           - :   52 :   }</span>
+<span class='hit'>          10 :   53 :   return check;</span>
+<span class='neutral'>           - :   54 : }</span>
+<span class='neutral'>           - :   55 : </span>
+<span class='hit'>          10 :   56 : bool check_a_OR_b_AND_c(bool a, bool b, bool c) {</span>
+<span class='hit'>          10 :   57 :   bool check = false;</span>
+<span class='hit'>          10 :   58 :   if (((a == true) || (b == true)) &amp;&amp; (c == true)) {</span>
+<span class='hit'>           6 :   59 :     check = true;</span>
+<span class='neutral'>           - :   60 :   }</span>
+<span class='hit'>          10 :   61 :   return check;</span>
+<span class='neutral'>           - :   62 : }</span>
+<span class='neutral'>           - :   63 : </span>
+<span class='hit'>           8 :   64 : bool check_a_OR__b_AND_c(bool a, bool b, bool c) {</span>
+<span class='hit'>           8 :   65 :   bool check = false;</span>
+<span class='hit'>           8 :   66 :   if ((a == true) || ((b == true) &amp;&amp; (c == true))) {</span>
+<span class='hit'>           4 :   67 :     check = true;</span>
+<span class='neutral'>           - :   68 :   }</span>
+<span class='hit'>           8 :   69 :   return check;</span>
+<span class='neutral'>           - :   70 : }</span>
+<span class='neutral'>           - :   71 : </span>
+<span class='hit'>           8 :   72 : bool check_a_AND_b_AND_c(bool a, bool b, bool c) {</span>
+<span class='hit'>           8 :   73 :   bool check = false;</span>
+<span class='hit'>           8 :   74 :   if ((a == true) &amp;&amp; (b == true) &amp;&amp; (c == true)) {</span>
+<span class='hit'>           2 :   75 :     check = true;</span>
+<span class='neutral'>           - :   76 :   }</span>
+<span class='hit'>           8 :   77 :   return check;</span>
+<span class='neutral'>           - :   78 : }</span>
+<span class='neutral'>           - :   79 : </span>
+<span class='hit'>          10 :   80 : bool check_a_AND_b_OR_a_AND_c(bool a, bool b, bool c) {</span>
+<span class='hit'>          10 :   81 :   bool check = false;</span>
+<span class='hit'>          10 :   82 :   if (((a == true) &amp;&amp; (b == true)) || ((a == true) &amp;&amp; (c == true))) {</span>
+<span class='hit'>           6 :   83 :     check = true;</span>
+<span class='neutral'>           - :   84 :   }</span>
+<span class='hit'>          10 :   85 :   return check;</span>
+<span class='neutral'>           - :   86 : }</span>
+<span class='neutral'>           - :   87 : </span>
+<span class='hit'>           8 :   88 : bool check_a_AND_b_XOR_a_AND_c(bool a, bool b, bool c) {</span>
+<span class='hit'>           8 :   89 :   bool check = false;</span>
+<span class='hit'>           8 :   90 :   bool a_AND_b = false;</span>
+<span class='hit'>           8 :   91 :   bool a_AND_c = false;</span>
+<span class='hit'>           8 :   92 :   if ((a == true) &amp;&amp; (b == true)) {</span>
+<span class='hit'>           4 :   93 :     a_AND_b = true;</span>
+<span class='neutral'>           - :   94 :   }</span>
+<span class='hit'>           8 :   95 :   if ((a == true) &amp;&amp; (c == true)) {</span>
+<span class='hit'>           4 :   96 :     a_AND_c = true;</span>
+<span class='neutral'>           - :   97 :   }</span>
+<span class='hit'>           8 :   98 :   if (((a_AND_b == true) &amp;&amp; (a_AND_c == false)) || ((a_AND_b == false) &amp;&amp; (a_AND_c == true))) {</span>
+<span class='hit'>           4 :   99 :     check = true;</span>
+<span class='neutral'>           - :  100 :   }</span>
+<span class='hit'>           8 :  101 :   return check;</span>
+<span class='neutral'>           - :  102 : }</span>
+<span class='neutral'>           - :  103 : </span>
+<span class='hit'>           8 :  104 : bool check_a_AND_b_XOR_a_AND_NOT_c(bool a, bool b, bool c) {</span>
+<span class='hit'>           8 :  105 :   bool check = false;</span>
+<span class='hit'>           8 :  106 :   bool a_AND_b = false;</span>
+<span class='hit'>           8 :  107 :   bool a_AND_NOT_c = false;</span>
+<span class='hit'>           8 :  108 :   if ((a == true) &amp;&amp; (b == true)) {</span>
+<span class='hit'>           4 :  109 :     a_AND_b = true;</span>
+<span class='neutral'>           - :  110 :   }</span>
+<span class='hit'>           8 :  111 :   if ((a == true) &amp;&amp; (c == false)) {</span>
+<span class='hit'>           4 :  112 :     a_AND_NOT_c = true;</span>
+<span class='neutral'>           - :  113 :   }</span>
+<span class='hit'>           8 :  114 :   if (((a_AND_b == true) &amp;&amp; (a_AND_NOT_c == false)) || ((a_AND_b == false) &amp;&amp; (a_AND_NOT_c == true))) {</span>
+<span class='hit'>           4 :  115 :     check = true;</span>
+<span class='neutral'>           - :  116 :   }</span>
+<span class='hit'>           8 :  117 :   return check;</span>
+<span class='neutral'>           - :  118 : }</span>
+<span class='neutral'>           - :  119 : </span>
+<span class='hit'>           8 :  120 : bool check_a_AND_b_XOR_a_AND_NOT_c_OR_d(bool a, bool b, bool c, bool d) {</span>
+<span class='hit'>           8 :  121 :   bool check = false;</span>
+<span class='hit'>           8 :  122 :   bool a_AND_b = false;</span>
+<span class='hit'>           8 :  123 :   bool a_AND_NOT_c_OR_d = false;</span>
+<span class='hit'>           8 :  124 :   if ((a == true) &amp;&amp; (b == true)) {</span>
+<span class='hit'>           6 :  125 :     a_AND_b = true;</span>
+<span class='neutral'>           - :  126 :   }</span>
+<span class='hit'>           8 :  127 :   if ((a == true) &amp;&amp; ((c == false) || (d == true))) {</span>
+<span class='hit'>           6 :  128 :     a_AND_NOT_c_OR_d = true;</span>
+<span class='neutral'>           - :  129 :   }</span>
+<span class='hit'>           8 :  130 :   if (((a_AND_b == true) &amp;&amp; (a_AND_NOT_c_OR_d == false)) || ((a_AND_b == false) &amp;&amp; (a_AND_NOT_c_OR_d == true))) {</span>
+<span class='hit'>           4 :  131 :     check = true;</span>
+<span class='neutral'>           - :  132 :   }</span>
+<span class='hit'>           8 :  133 :   return check;</span>
+<span class='neutral'>           - :  134 : }</span></pre><h2>Generated tests: <code>results/first_update2026_run/generated/generated_test_file.cpp</code></h2><pre><span class='neutral'>           - :    0 : Source:/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated/generated_test_file.cpp</span>
+<span class='neutral'>           - :    0 : Graph:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.gcno</span>
+<span class='neutral'>           - :    0 : Data:/workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run/generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.gcda</span>
+<span class='neutral'>           - :    0 : Runs:2</span>
+<span class='neutral'>           - :    1 : #include &lt;gtest/gtest.h&gt;</span>
+<span class='neutral'>           - :    2 : #include &quot;includes/boolean_algebra.h&quot;</span>
+<span class='neutral'>           - :    3 : </span>
+<span class='neutral'>           - :    4 : // return_0 and return_1</span>
+<span class='hit'>          2* :    5 : TEST(BooleanAlgebra, Return0) { EXPECT_EQ(return_0(), 0); }</span>
+<span class='hit'>          2* :    6 : TEST(BooleanAlgebra, Return1) { EXPECT_EQ(return_1(), 1); }</span>
+<span class='neutral'>           - :    7 : </span>
+<span class='neutral'>           - :    8 : // return_a and return_NOT_a</span>
+<span class='hit'>          2* :    9 : TEST(BooleanAlgebra, ReturnA_True) { EXPECT_TRUE(return_a(true)); }</span>
+<span class='hit'>          2* :   10 : TEST(BooleanAlgebra, ReturnA_False) { EXPECT_FALSE(return_a(false)); }</span>
+<span class='hit'>          2* :   11 : TEST(BooleanAlgebra, NotA_True) { EXPECT_FALSE(return_NOT_a(true)); }</span>
+<span class='hit'>          2* :   12 : TEST(BooleanAlgebra, NotA_False) { EXPECT_TRUE(return_NOT_a(false)); }</span>
+<span class='neutral'>           - :   13 : </span>
+<span class='neutral'>           - :   14 : // check_a_OR_b</span>
+<span class='hit'>          2* :   15 : TEST(BooleanAlgebra, AorB_BothFalse) { EXPECT_FALSE(check_a_OR_b(false, false)); }</span>
+<span class='hit'>          2* :   16 : TEST(BooleanAlgebra, AorB_Atrue) { EXPECT_TRUE(check_a_OR_b(true, false)); }</span>
+<span class='hit'>          2* :   17 : TEST(BooleanAlgebra, AorB_Btrue) { EXPECT_TRUE(check_a_OR_b(false, true)); }</span>
+<span class='hit'>          2* :   18 : TEST(BooleanAlgebra, AorB_BothTrue) { EXPECT_TRUE(check_a_OR_b(true, true)); }</span>
+<span class='neutral'>           - :   19 : </span>
+<span class='neutral'>           - :   20 : // check_a_XOR_b</span>
+<span class='hit'>          2* :   21 : TEST(BooleanAlgebra, AXorB_BothFalse) { EXPECT_FALSE(check_a_XOR_b(false, false)); }</span>
+<span class='hit'>          2* :   22 : TEST(BooleanAlgebra, AXorB_Btrue) { EXPECT_TRUE(check_a_XOR_b(false, true)); }</span>
+<span class='hit'>          2* :   23 : TEST(BooleanAlgebra, AXorB_Atrue) { EXPECT_TRUE(check_a_XOR_b(true, false)); }</span>
+<span class='hit'>          2* :   24 : TEST(BooleanAlgebra, AXorB_BothTrue) { EXPECT_FALSE(check_a_XOR_b(true, true)); }</span>
+<span class='neutral'>           - :   25 : </span>
+<span class='neutral'>           - :   26 : // check_a_NOR_b</span>
+<span class='hit'>          2* :   27 : TEST(BooleanAlgebra, ANorB_BothFalse) { EXPECT_TRUE(check_a_NOR_b(false, false)); }</span>
+<span class='hit'>          2* :   28 : TEST(BooleanAlgebra, ANorB_Btrue) { EXPECT_FALSE(check_a_NOR_b(false, true)); }</span>
+<span class='hit'>          2* :   29 : TEST(BooleanAlgebra, ANorB_Atrue) { EXPECT_FALSE(check_a_NOR_b(true, false)); }</span>
+<span class='hit'>          2* :   30 : TEST(BooleanAlgebra, ANorB_BothTrue) { EXPECT_FALSE(check_a_NOR_b(true, true)); }</span>
+<span class='neutral'>           - :   31 : </span>
+<span class='neutral'>           - :   32 : // check_a_AND_b</span>
+<span class='hit'>          2* :   33 : TEST(BooleanAlgebra, AAndB_BothFalse) { EXPECT_FALSE(check_a_AND_b(false, false)); }</span>
+<span class='hit'>          2* :   34 : TEST(BooleanAlgebra, AAndB_Btrue) { EXPECT_FALSE(check_a_AND_b(false, true)); }</span>
+<span class='hit'>          2* :   35 : TEST(BooleanAlgebra, AAndB_Atrue) { EXPECT_FALSE(check_a_AND_b(true, false)); }</span>
+<span class='hit'>          2* :   36 : TEST(BooleanAlgebra, AAndB_BothTrue) { EXPECT_TRUE(check_a_AND_b(true, true)); }</span>
+<span class='neutral'>           - :   37 : </span>
+<span class='neutral'>           - :   38 : // check_a_NAND_b</span>
+<span class='hit'>          2* :   39 : TEST(BooleanAlgebra, ANandB_BothFalse) { EXPECT_TRUE(check_a_NAND_b(false, false)); }</span>
+<span class='hit'>          2* :   40 : TEST(BooleanAlgebra, ANandB_Btrue) { EXPECT_TRUE(check_a_NAND_b(false, true)); }</span>
+<span class='hit'>          2* :   41 : TEST(BooleanAlgebra, ANandB_Atrue) { EXPECT_TRUE(check_a_NAND_b(true, false)); }</span>
+<span class='hit'>          2* :   42 : TEST(BooleanAlgebra, ANandB_BothTrue) { EXPECT_FALSE(check_a_NAND_b(true, true)); }</span>
+<span class='neutral'>           - :   43 : </span>
+<span class='neutral'>           - :   44 : // check_a_OR_b_OR_c</span>
+<span class='hit'>          2* :   45 : TEST(BooleanAlgebra, AorBorC_AllFalse) { EXPECT_FALSE(check_a_OR_b_OR_c(false, false, false)); }</span>
+<span class='hit'>          2* :   46 : TEST(BooleanAlgebra, AorBorC_Atrue) { EXPECT_TRUE(check_a_OR_b_OR_c(true, false, false)); }</span>
+<span class='hit'>          2* :   47 : TEST(BooleanAlgebra, AorBorC_Btrue) { EXPECT_TRUE(check_a_OR_b_OR_c(false, true, false)); }</span>
+<span class='hit'>          2* :   48 : TEST(BooleanAlgebra, AorBorC_Ctrue) { EXPECT_TRUE(check_a_OR_b_OR_c(false, false, true)); }</span>
+<span class='hit'>          2* :   49 : TEST(BooleanAlgebra, AorBorC_AllTrue) { EXPECT_TRUE(check_a_OR_b_OR_c(true, true, true)); }</span>
+<span class='neutral'>           - :   50 : </span>
+<span class='neutral'>           - :   51 : // check_a_OR_b_AND_c</span>
+<span class='hit'>          2* :   52 : TEST(BooleanAlgebra, AorBAndC_AllFalse) { EXPECT_FALSE(check_a_OR_b_AND_c(false, false, false)); }</span>
+<span class='hit'>          2* :   53 : TEST(BooleanAlgebra, AorBAndC_Btrue) { EXPECT_FALSE(check_a_OR_b_AND_c(false, true, false)); }</span>
+<span class='hit'>          2* :   54 : TEST(BooleanAlgebra, AorBAndC_AllTrue) { EXPECT_TRUE(check_a_OR_b_AND_c(true, true, true)); }</span>
+<span class='hit'>          2* :   55 : TEST(BooleanAlgebra, AorBAndC_Btrue_Ctrue) { EXPECT_TRUE(check_a_OR_b_AND_c(false, true, true)); }</span>
+<span class='hit'>          2* :   56 : TEST(BooleanAlgebra, AorBAndC_Atrue_Ctrue) { EXPECT_TRUE(check_a_OR_b_AND_c(true, false, true)); }</span>
+<span class='neutral'>           - :   57 : </span>
+<span class='neutral'>           - :   58 : // check_a_OR__b_AND_c</span>
+<span class='hit'>          2* :   59 : TEST(BooleanAlgebra, Aor_BAndC_AllFalse) { EXPECT_FALSE(check_a_OR__b_AND_c(false, false, false)); }</span>
+<span class='hit'>          2* :   60 : TEST(BooleanAlgebra, Aor_BAndC_Atrue) { EXPECT_TRUE(check_a_OR__b_AND_c(true, false, false)); }</span>
+<span class='hit'>          2* :   61 : TEST(BooleanAlgebra, Aor_BAndC_BAndCTrue) { EXPECT_TRUE(check_a_OR__b_AND_c(false, true, true)); }</span>
+<span class='hit'>          2* :   62 : TEST(BooleanAlgebra, Aor_BAndC_BTrue_CFalse) { EXPECT_FALSE(check_a_OR__b_AND_c(false, true, false)); }</span>
+<span class='neutral'>           - :   63 : </span>
+<span class='neutral'>           - :   64 : // check_a_AND_b_AND_c</span>
+<span class='hit'>          2* :   65 : TEST(BooleanAlgebra, AAndBAndC_AllTrue) { EXPECT_TRUE(check_a_AND_b_AND_c(true, true, true)); }</span>
+<span class='hit'>          2* :   66 : TEST(BooleanAlgebra, AAndBAndC_CFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(true, true, false)); }</span>
+<span class='hit'>          2* :   67 : TEST(BooleanAlgebra, AAndBAndC_BFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(true, false, true)); }</span>
+<span class='hit'>          2* :   68 : TEST(BooleanAlgebra, AAndBAndC_AFalse) { EXPECT_FALSE(check_a_AND_b_AND_c(false, true, true)); }</span>
+<span class='neutral'>           - :   69 : </span>
+<span class='neutral'>           - :   70 : // check_a_AND_b_OR_a_AND_c</span>
+<span class='hit'>          2* :   71 : TEST(BooleanAlgebra, AAndBOrAAndC_AAndB) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, true, false)); }</span>
+<span class='hit'>          2* :   72 : TEST(BooleanAlgebra, AAndBOrAAndC_AAndC) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, false, true)); }</span>
+<span class='hit'>          2* :   73 : TEST(BooleanAlgebra, AAndBOrAAndC_OnlyA) { EXPECT_FALSE(check_a_AND_b_OR_a_AND_c(true, false, false)); }</span>
+<span class='hit'>          2* :   74 : TEST(BooleanAlgebra, AAndBOrAAndC_AllTrue) { EXPECT_TRUE(check_a_AND_b_OR_a_AND_c(true, true, true)); }</span>
+<span class='hit'>          2* :   75 : TEST(BooleanAlgebra, AAndBOrAAndC_OnlyB) { EXPECT_FALSE(check_a_AND_b_OR_a_AND_c(false, true, false)); }</span>
+<span class='neutral'>           - :   76 : </span>
+<span class='neutral'>           - :   77 : // check_a_AND_b_XOR_a_AND_c</span>
+<span class='hit'>          2* :   78 : TEST(BooleanAlgebra, AAndBXorAAndC_AAndB) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_c(true, true, false)); }</span>
+<span class='hit'>          2* :   79 : TEST(BooleanAlgebra, AAndBXorAAndC_AAndC) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_c(true, false, true)); }</span>
+<span class='hit'>          2* :   80 : TEST(BooleanAlgebra, AAndBXorAAndC_AFalse) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_c(false, true, true)); }</span>
+<span class='hit'>          2* :   81 : TEST(BooleanAlgebra, AAndBXorAAndC_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_c(true, true, true)); }</span>
+<span class='neutral'>           - :   82 : </span>
+<span class='neutral'>           - :   83 : // check_a_AND_b_XOR_a_AND_NOT_c</span>
+<span class='hit'>           6 :   84 : TEST(BooleanAlgebra, AAndBXorAAndNotC_AAndB_CFalse) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c(true, true, false)); }</span>
+<span class='hit'>           6 :   85 : TEST(BooleanAlgebra, AAndBXorAAndNotC_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c(true, true, true)); }</span>
+<span class='hit'>          2* :   86 : TEST(BooleanAlgebra, AAndBXorAAndNotC_AAndNotC) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c(true, false, false)); }</span>
+<span class='hit'>          2* :   87 : TEST(BooleanAlgebra, AAndBXorAAndNotC_AFalse) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c(false, true, false)); }</span>
+<span class='neutral'>           - :   88 : </span>
+<span class='neutral'>           - :   89 : // check_a_AND_b_XOR_a_AND_NOT_c_OR_d</span>
+<span class='hit'>           6 :   90 : TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndB) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, false, false)); }</span>
+<span class='hit'>          2* :   91 : TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AllTrue) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, true)); }</span>
+<span class='hit'>          2* :   92 : TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndNotCOrD) { EXPECT_TRUE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, false, false, true)); }</span>
+<span class='hit'>           6 :   93 : TEST(BooleanAlgebra, AAndBXorAAndNotCOrD_AAndBOrC) { EXPECT_FALSE(check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, false)); }</span></pre></body></html>
