@@ -1,0 +1,172 @@
+# Common ASIL Assistant Instructions
+
+Model: GPT-4-turbo (12.04.2024)
+
+1. Create a list of all test cases in a tabular form in the beginning.
+2. Create test functions using the Google Test Framework.
+3. Provide the output as HTML.
+# ASIL A Assistant
+
+This assistant extends the common instructions.
+
+Model: GPT-4-turbo (12.04.2024)
+
+ASIL A coverage requirements:
+1. The test cases are derived from the requirements.
+2. The test cases must lead to 100% line or statement coverage.
+#ifndef BOOLEAN_ALGEBRA_H
+#define BOOLEAN_ALGEBRA_H
+
+int return_0(void);
+int return_1(void);
+bool return_a(bool a);
+bool return_NOT_a(bool a);
+bool check_a_OR_b(bool a, bool b);
+bool check_a_XOR_b(bool a, bool b);
+bool check_a_NOR_b(bool a, bool b);
+bool check_a_AND_b(bool a, bool b);
+bool check_a_NAND_b(bool a, bool b);
+bool check_a_OR_b_OR_c(bool a, bool b, bool c);
+bool check_a_OR_b_AND_c(bool a, bool b, bool c);
+bool check_a_OR__b_AND_c(bool a, bool b, bool c);
+bool check_a_AND_b_AND_c(bool a, bool b, bool c);
+bool check_a_AND_b_OR_a_AND_c(bool a, bool b, bool c);
+bool check_a_AND_b_XOR_a_AND_c(bool a, bool b, bool c);
+bool check_a_AND_b_XOR_a_AND_NOT_c(bool a, bool b, bool c);
+bool check_a_AND_b_XOR_a_AND_NOT_c_OR_d(bool a, bool b, bool c, bool d);
+
+#endif
+#include "includes/boolean_algebra.h"
+
+int return_0(void) { return 0; }
+int return_1(void) { return 1; }
+bool return_a(bool a) { return a; }
+bool return_NOT_a(bool a) { return !a; }
+
+bool check_a_OR_b(bool a, bool b) {
+  bool check = false;
+  if ((a == true) || (b == true)) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_XOR_b(bool a, bool b) {
+  bool check = false;
+  if (((a == true) && (b == false)) || ((a == false) && (b == true))) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_NOR_b(bool a, bool b) {
+  bool check = false;
+  if ((a == true) || (b == true)) {
+    check = true;
+  }
+  return !check;
+}
+
+bool check_a_AND_b(bool a, bool b) {
+  bool check = false;
+  if ((a == true) && (b == true)) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_NAND_b(bool a, bool b) {
+  bool check = false;
+  if ((a == true) && (b == true)) {
+    check = true;
+  }
+  return !check;
+}
+
+bool check_a_OR_b_OR_c(bool a, bool b, bool c) {
+  bool check = false;
+  if ((a == true) || (b == true) || (c == true)) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_OR_b_AND_c(bool a, bool b, bool c) {
+  bool check = false;
+  if (((a == true) || (b == true)) && (c == true)) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_OR__b_AND_c(bool a, bool b, bool c) {
+  bool check = false;
+  if ((a == true) || ((b == true) && (c == true))) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_AND_b_AND_c(bool a, bool b, bool c) {
+  bool check = false;
+  if ((a == true) && (b == true) && (c == true)) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_AND_b_OR_a_AND_c(bool a, bool b, bool c) {
+  bool check = false;
+  if (((a == true) && (b == true)) || ((a == true) && (c == true))) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_AND_b_XOR_a_AND_c(bool a, bool b, bool c) {
+  bool check = false;
+  bool a_AND_b = false;
+  bool a_AND_c = false;
+  if ((a == true) && (b == true)) {
+    a_AND_b = true;
+  }
+  if ((a == true) && (c == true)) {
+    a_AND_c = true;
+  }
+  if (((a_AND_b == true) && (a_AND_c == false)) || ((a_AND_b == false) && (a_AND_c == true))) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_AND_b_XOR_a_AND_NOT_c(bool a, bool b, bool c) {
+  bool check = false;
+  bool a_AND_b = false;
+  bool a_AND_NOT_c = false;
+  if ((a == true) && (b == true)) {
+    a_AND_b = true;
+  }
+  if ((a == true) && (c == false)) {
+    a_AND_NOT_c = true;
+  }
+  if (((a_AND_b == true) && (a_AND_NOT_c == false)) || ((a_AND_b == false) && (a_AND_NOT_c == true))) {
+    check = true;
+  }
+  return check;
+}
+
+bool check_a_AND_b_XOR_a_AND_NOT_c_OR_d(bool a, bool b, bool c, bool d) {
+  bool check = false;
+  bool a_AND_b = false;
+  bool a_AND_NOT_c_OR_d = false;
+  if ((a == true) && (b == true)) {
+    a_AND_b = true;
+  }
+  if ((a == true) && ((c == false) || (d == true))) {
+    a_AND_NOT_c_OR_d = true;
+  }
+  if (((a_AND_b == true) && (a_AND_NOT_c_OR_d == false)) || ((a_AND_b == false) && (a_AND_NOT_c_OR_d == true))) {
+    check = true;
+  }
+  return check;
+}
