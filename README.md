@@ -17,9 +17,22 @@ The repository scaffold is designed to:
 - support Codex-driven and agent-assisted workflows under explicit governance rules; and
 - enable later baseline-versus-current-model comparisons without conflating old and new evidence.
 
+## Relation to the manuscript draft
+
+The repository includes a manuscript artifact at `docs/LLAIS1_paper_26.pdf`.
+
+That document should be treated as a **study narrative artifact**, not as independent proof. The repository remains the operational source of truth for:
+
+- experiment definitions;
+- prompts, agent settings, and execution procedures;
+- preserved run evidence and logs; and
+- reproduced claims that can be audited from repository contents.
+
+If the manuscript draft and repository evidence ever diverge, the discrepancy must be resolved explicitly and documented. The repository must not be retrofitted to match an unverified textual claim.
+
 ## Repository structure
 
-- `docs/` — study documentation, protocol notes, and reporting guidance.
+- `docs/` — study documentation, manuscript artifacts, protocol notes, and reporting guidance.
 - `prompts/` — versioned prompt assets and prompt-related metadata.
 - `agents/` — agent instructions, orchestration notes, and agent configuration artifacts.
 - `framework/` — experiment framework code and reusable implementation utilities for the new study.
@@ -58,8 +71,9 @@ Accordingly:
 
 - claims must be tied to reproducible experiment records;
 - prompts, configurations, scripts, and outputs should be preserved whenever possible;
-- negative, partial, or inconclusive outcomes must not be hidden; and
-- reported comparisons must distinguish clearly between historical baseline evidence and newly reproduced results.
+- negative, partial, or inconclusive outcomes must not be hidden;
+- reported comparisons must distinguish clearly between historical baseline evidence and newly reproduced results; and
+- manuscript wording must remain traceable to repository evidence rather than replacing it.
 
 ## Current status
 

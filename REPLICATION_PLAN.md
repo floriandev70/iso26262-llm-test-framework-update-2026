@@ -12,6 +12,12 @@ Historical reference baseline:
 
 This baseline is a study reference only and must not be treated as reproduced evidence inside this repository.
 
+## Manuscript alignment
+
+A manuscript artifact is stored at `docs/LLAIS1_paper_26.pdf`.
+
+The manuscript should be treated as a synchronized reporting artifact for the study, with repository evidence taking precedence whenever there is uncertainty. Any statement intended for publication should be traceable to preserved repository artifacts, commands, prompts, and result logs.
+
 ## Replication scope
 
 Initial replication scope:
@@ -36,7 +42,8 @@ Initial extension scope:
 - toolchain drift may affect compilation, test execution, or coverage measurement;
 - agent-assisted workflows may introduce hidden intervention unless carefully logged;
 - prompt changes and orchestration changes may confound attribution of observed effects;
-- safety-relevant interpretations may be overstated if evidence trails are incomplete.
+- safety-relevant interpretations may be overstated if evidence trails are incomplete; and
+- manuscript wording may drift away from the reproducible artifact trail unless claim-to-evidence links are maintained.
 
 ## First implementation milestones
 
@@ -45,7 +52,8 @@ Initial extension scope:
 3. Connect the historical baseline as a reference-only input with clear provenance.
 4. Define the experiment matrix and versioned prompt structure.
 5. Define evidence logging, coverage reporting, and result comparison formats.
-6. Implement deterministic execution scripts for the first controlled pilot runs.
+6. Add a claim-to-evidence trace process so manuscript statements can be audited against repository artifacts.
+7. Implement deterministic execution scripts for the first controlled pilot runs.
 
 ## TODO
 
@@ -54,3 +62,4 @@ Initial extension scope:
 - [ ] define prompt versioning
 - [ ] define evidence logging format
 - [ ] define coverage toolchain and reporting format
+- [ ] define claim-to-evidence trace format for manuscript alignment

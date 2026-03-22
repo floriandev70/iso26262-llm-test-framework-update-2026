@@ -24,6 +24,8 @@ This repository supports a controlled replication and extension study for ISO 26
    - A slower but well-evidenced workflow is preferred over an ambiguous shortcut.
 10. **Preserve evidence for each experiment run.**
     - Store logs, prompts, configurations, metadata, and derived reports in a way that supports later audit.
+11. **Keep manuscript claims aligned with repository evidence.**
+    - If `docs/LLAIS1_paper_26.pdf` or related text diverges from repository evidence, update the Markdown documentation or flag the discrepancy explicitly; do not backfill evidence to fit narrative claims.
 
 ## Practical repository expectations
 
@@ -32,3 +34,4 @@ This repository supports a controlled replication and extension study for ISO 26
 - Prefer explicit file-based records over ephemeral conversational summaries.
 - When interacting with external repositories or tools, document versions, commit hashes, and invocation commands whenever feasible.
 - If a workflow cannot be made fully deterministic, document the source of nondeterminism and the mitigation steps used.
+- Preserve a clear trace from manuscript statements to the exact experiment artifacts that support them.
