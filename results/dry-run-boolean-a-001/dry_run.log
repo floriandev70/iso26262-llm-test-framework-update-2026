@@ -1,0 +1,7 @@
+Dry-run status: OK
+Results directory prepared at: /workspace/iso26262-llm-test-framework-update-2026/results/dry-run-boolean-a-001
+Prompt package preserved at: /workspace/iso26262-llm-test-framework-update-2026/results/dry-run-boolean-a-001/prompt.txt
+Commands prepared at: /workspace/iso26262-llm-test-framework-update-2026/results/dry-run-boolean-a-001/commands.sh
+Raw model output not provided; actual run remains blocked.
+Generated test source not provided; actual run remains blocked.
+gcovr not available; coverage would need an explicitly documented alternative.
