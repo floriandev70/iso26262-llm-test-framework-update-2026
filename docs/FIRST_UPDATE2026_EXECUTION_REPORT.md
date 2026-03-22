@@ -78,7 +78,7 @@ cmake --build /workspace/iso26262-llm-test-framework-update-2026/build/first_upd
 ctest --test-dir /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run --output-on-failure
 ```
 
-Coverage remained conditional in the original execution capture because `gcovr` was not installed in this environment. A later preserved fallback coverage pass for this same run was executed on 2026-03-22 UTC and is documented in `docs/COVERAGE_EXECUTION_REPORT.md`.
+Coverage remained conditional in the original execution capture because `gcovr` was not installed in this environment. A later preserved coverage pass for this same run was executed on 2026-03-22 UTC using the repo-local `tools/bin/gcovr` compatibility wrapper and is documented in `docs/COVERAGE_EXECUTION_REPORT.md`.
 
 ## Build result
 
@@ -108,7 +108,7 @@ This means the generated test suite is now compiled and executable, and its pres
 
 - Result in the original execution capture: **not executed**.
 - Original reason: `gcovr` was not installed in the environment, so the documented baseline coverage path was not ready.
-- Later update: a preserved fallback `gcov`-based coverage pass was executed on `2026-03-22` for this same run without changing prompts, source-under-test, or generated tests. See `docs/COVERAGE_EXECUTION_REPORT.md` and `results/first_update2026_run/coverage.log`.
+- Later update: a preserved coverage pass was executed on `2026-03-22` for this same run using the repo-local `tools/bin/gcovr` compatibility wrapper, without changing prompts, source-under-test, or generated tests. See `docs/COVERAGE_EXECUTION_REPORT.md` and `results/first_update2026_run/coverage.log`.
 
 ## Observed anomalies and deviations
 
@@ -125,8 +125,8 @@ This means the generated test suite is now compiled and executable, and its pres
    - This is a tooling deviation, not a scientific-input deviation.
 
 4. **Coverage tooling deviation remains open**
-   - Native `gcovr` is still unavailable in this environment.
-   - However, a preserved fallback `gcov`-based coverage pass for this run was later executed and stored on `2026-03-22`; the tooling deviation therefore remains, but the update run is no longer completely without coverage evidence.
+   - Native package-installed `gcovr` is still unavailable in this environment.
+   - However, a preserved coverage pass for this run was later executed and stored on `2026-03-22` using the repo-local `tools/bin/gcovr` compatibility wrapper; the tooling deviation therefore remains, but the update run is no longer completely without coverage evidence.
 
 5. **Preservation note**
    - No edits were made to the frozen prompt files.
@@ -146,7 +146,7 @@ This means the generated test suite is now compiled and executable, and its pres
 
 - The generation agent/workflow differs materially from the historical reference because this run used the current Codex-based workflow.
 - The execution now uses the repository-local GoogleTest-compatible shim path instead of live dependency fetch.
-- Native `gcovr` output is still unavailable because `gcovr` is absent, but a preserved fallback `gcov`-based coverage pass now exists for this run.
+- Native package-installed `gcovr` output is still unavailable because upstream installation remains blocked, but a preserved repo-local `tools/bin/gcovr` coverage pass now exists for this run.
 
 ## Comparability assessment
 

@@ -138,7 +138,9 @@ resolve_coverage_tool() {
   case "${COVERAGE_TOOL}" in
     auto)
       if command -v gcovr >/dev/null 2>&1; then
-        echo "gcovr"
+        command -v gcovr
+      elif [[ -x "${REPO_LOCAL_GCOVR}" ]]; then
+        echo "${REPO_LOCAL_GCOVR}"
       else
         echo "none"
       fi
@@ -161,6 +163,7 @@ require_file "${ASIL_PROMPT}"
 require_file "${HEADER_PATH}"
 require_file "${SOURCE_PATH}"
 
+REPO_LOCAL_GCOVR="${REPO_ROOT}/tools/bin/gcovr"
 SELECTED_COVERAGE_TOOL="$(resolve_coverage_tool)"
 
 mkdir -p "${RUN_RESULTS_DIR}"
@@ -192,9 +195,9 @@ cmake --build ${BUILD_DIR}
 ctest --test-dir ${BUILD_DIR} --output-on-failure
 EOF
 
-if [[ "${SELECTED_COVERAGE_TOOL}" == "gcovr" ]]; then
+if [[ "${SELECTED_COVERAGE_TOOL}" != "none" ]]; then
   cat >> "${RUN_RESULTS_DIR}/commands.sh" <<EOF
-gcovr -r ${REPO_ROOT} ${BUILD_DIR} --html --html-details -o ${RUN_RESULTS_DIR}/coverage.html
+"${SELECTED_COVERAGE_TOOL}" -r ${REPO_ROOT} ${BUILD_DIR} --html --html-details -o ${RUN_RESULTS_DIR}/coverage.html
 EOF
 fi
 
@@ -211,7 +214,7 @@ if [[ "${DRY_RUN}" -eq 1 ]]; then
       echo "Generated test source not provided; actual run remains blocked."
     fi
     if [[ "${SELECTED_COVERAGE_TOOL}" == "none" ]]; then
-      echo "gcovr not available; coverage would need an explicitly documented alternative."
+      echo "gcovr not available; coverage remains blocked until a documented tool path is provided."
     fi
   } | tee "${RUN_RESULTS_DIR}/dry_run.log"
   exit 0
@@ -226,15 +229,21 @@ require_file "${RAW_OUTPUT_PATH}"
 require_file "${GENERATED_TEST_SOURCE}"
 
 mkdir -p "${GENERATED_DIR}" "${BUILD_DIR}"
-cp "${RAW_OUTPUT_PATH}" "${RUN_RESULTS_DIR}/raw_model_output.txt"
-cp "${GENERATED_TEST_SOURCE}" "${GENERATED_DIR}/$(basename "${GENERATED_TEST_SOURCE}")"
+RAW_OUTPUT_DEST="${RUN_RESULTS_DIR}/raw_model_output.txt"
+GENERATED_TEST_DEST="${GENERATED_DIR}/$(basename "${GENERATED_TEST_SOURCE}")"
+if [[ "$(realpath "${RAW_OUTPUT_PATH}")" != "$(realpath "${RAW_OUTPUT_DEST}")" ]]; then
+  cp "${RAW_OUTPUT_PATH}" "${RAW_OUTPUT_DEST}"
+fi
+if [[ "$(realpath "${GENERATED_TEST_SOURCE}")" != "$(realpath "${GENERATED_TEST_DEST}")" ]]; then
+  cp "${GENERATED_TEST_SOURCE}" "${GENERATED_TEST_DEST}"
+fi
 
 GENERATED_TEST_BASENAME="$(basename "${GENERATED_TEST_SOURCE}")"
 
 cat > "${GENERATED_DIR}/CMakeLists.txt" <<EOF
 cmake_minimum_required(VERSION 3.20)
 
-include(${CMAKE_SOURCE_DIR}/cmake/LocalGTest.cmake)
+include(\${CMAKE_SOURCE_DIR}/cmake/LocalGTest.cmake)
 
 iso26262_add_gtest_executable(first_baseline_generated_tests
   ${GENERATED_TEST_BASENAME}
@@ -247,7 +256,7 @@ target_link_libraries(first_baseline_generated_tests
 
 target_include_directories(first_baseline_generated_tests
   PRIVATE
-    ${CMAKE_SOURCE_DIR}/baseline/Lab
+    \${CMAKE_SOURCE_DIR}/baseline/Lab
 )
 EOF
 
@@ -257,10 +266,13 @@ cmake -S "${REPO_ROOT}" -B "${BUILD_DIR}" \
   2>&1 | tee "${RUN_RESULTS_DIR}/configure.log"
 
 cmake --build "${BUILD_DIR}" 2>&1 | tee "${RUN_RESULTS_DIR}/compiler.log"
+set +e
 ctest --test-dir "${BUILD_DIR}" --output-on-failure 2>&1 | tee "${RUN_RESULTS_DIR}/test_execution.log"
+CTEST_EXIT=${PIPESTATUS[0]}
+set -e
 
-if [[ "${SELECTED_COVERAGE_TOOL}" == "gcovr" ]]; then
-  gcovr -r "${REPO_ROOT}" "${BUILD_DIR}" --html --html-details -o "${RUN_RESULTS_DIR}/coverage.html" \
+if [[ "${SELECTED_COVERAGE_TOOL}" != "none" ]]; then
+  "${SELECTED_COVERAGE_TOOL}" -r "${REPO_ROOT}" "${BUILD_DIR}" --html --html-details -o "${RUN_RESULTS_DIR}/coverage.html" \
     2>&1 | tee "${RUN_RESULTS_DIR}/coverage.log"
 else
   {
@@ -268,4 +280,8 @@ else
     echo "Reason: gcovr not available in the current environment."
     echo "Alternative tooling is not auto-selected to avoid undocumented deviations."
   } | tee "${RUN_RESULTS_DIR}/coverage.log"
+fi
+
+if [[ ${CTEST_EXIT:-0} -ne 0 ]]; then
+  exit "${CTEST_EXIT}"
 fi

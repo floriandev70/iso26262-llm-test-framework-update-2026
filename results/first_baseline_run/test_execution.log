@@ -1,0 +1,147 @@
+Internal ctest changing into directory: /workspace/iso26262-llm-test-framework-update-2026/build/first_baseline_run
+Test project /workspace/iso26262-llm-test-framework-update-2026/build/first_baseline_run
+    Start 1: first_baseline_generated_tests
+1/1 Test #1: first_baseline_generated_tests ...***Failed    0.02 sec
+[==========] Running 61 tests from 61 test cases.
+[ RUN      ] BooleanAlgebra.Return0
+[       OK ] BooleanAlgebra.Return0
+[ RUN      ] BooleanAlgebra.Return1
+[       OK ] BooleanAlgebra.Return1
+[ RUN      ] BooleanAlgebra.ReturnA_True
+[       OK ] BooleanAlgebra.ReturnA_True
+[ RUN      ] BooleanAlgebra.ReturnA_False
+[       OK ] BooleanAlgebra.ReturnA_False
+[ RUN      ] BooleanAlgebra.NotA_True
+[       OK ] BooleanAlgebra.NotA_True
+[ RUN      ] BooleanAlgebra.NotA_False
+[       OK ] BooleanAlgebra.NotA_False
+[ RUN      ] BooleanAlgebra.AorB_BothFalse
+[       OK ] BooleanAlgebra.AorB_BothFalse
+[ RUN      ] BooleanAlgebra.AorB_Atrue
+[       OK ] BooleanAlgebra.AorB_Atrue
+[ RUN      ] BooleanAlgebra.AorB_Btrue
+[       OK ] BooleanAlgebra.AorB_Btrue
+[ RUN      ] BooleanAlgebra.AorB_BothTrue
+[       OK ] BooleanAlgebra.AorB_BothTrue
+[ RUN      ] BooleanAlgebra.AXorB_BothFalse
+[       OK ] BooleanAlgebra.AXorB_BothFalse
+[ RUN      ] BooleanAlgebra.AXorB_Btrue
+[       OK ] BooleanAlgebra.AXorB_Btrue
+[ RUN      ] BooleanAlgebra.AXorB_Atrue
+[       OK ] BooleanAlgebra.AXorB_Atrue
+[ RUN      ] BooleanAlgebra.AXorB_BothTrue
+[       OK ] BooleanAlgebra.AXorB_BothTrue
+[ RUN      ] BooleanAlgebra.ANorB_BothFalse
+[       OK ] BooleanAlgebra.ANorB_BothFalse
+[ RUN      ] BooleanAlgebra.ANorB_Btrue
+[       OK ] BooleanAlgebra.ANorB_Btrue
+[ RUN      ] BooleanAlgebra.ANorB_Atrue
+[       OK ] BooleanAlgebra.ANorB_Atrue
+[ RUN      ] BooleanAlgebra.ANorB_BothTrue
+[       OK ] BooleanAlgebra.ANorB_BothTrue
+[ RUN      ] BooleanAlgebra.AAndB_BothFalse
+[       OK ] BooleanAlgebra.AAndB_BothFalse
+[ RUN      ] BooleanAlgebra.AAndB_Btrue
+[       OK ] BooleanAlgebra.AAndB_Btrue
+[ RUN      ] BooleanAlgebra.AAndB_Atrue
+[       OK ] BooleanAlgebra.AAndB_Atrue
+[ RUN      ] BooleanAlgebra.AAndB_BothTrue
+[       OK ] BooleanAlgebra.AAndB_BothTrue
+[ RUN      ] BooleanAlgebra.ANandB_BothFalse
+[       OK ] BooleanAlgebra.ANandB_BothFalse
+[ RUN      ] BooleanAlgebra.ANandB_Btrue
+[       OK ] BooleanAlgebra.ANandB_Btrue
+[ RUN      ] BooleanAlgebra.ANandB_Atrue
+[       OK ] BooleanAlgebra.ANandB_Atrue
+[ RUN      ] BooleanAlgebra.ANandB_BothTrue
+[       OK ] BooleanAlgebra.ANandB_BothTrue
+[ RUN      ] BooleanAlgebra.AorBorC_AllFalse
+[       OK ] BooleanAlgebra.AorBorC_AllFalse
+[ RUN      ] BooleanAlgebra.AorBorC_Atrue
+[       OK ] BooleanAlgebra.AorBorC_Atrue
+[ RUN      ] BooleanAlgebra.AorBorC_Btrue
+[       OK ] BooleanAlgebra.AorBorC_Btrue
+[ RUN      ] BooleanAlgebra.AorBorC_Ctrue
+[       OK ] BooleanAlgebra.AorBorC_Ctrue
+[ RUN      ] BooleanAlgebra.AorBorC_AllTrue
+[       OK ] BooleanAlgebra.AorBorC_AllTrue
+[ RUN      ] BooleanAlgebra.AorBAndC_AllFalse
+[       OK ] BooleanAlgebra.AorBAndC_AllFalse
+[ RUN      ] BooleanAlgebra.AorBAndC_Btrue
+[       OK ] BooleanAlgebra.AorBAndC_Btrue
+[ RUN      ] BooleanAlgebra.AorBAndC_AllTrue
+[       OK ] BooleanAlgebra.AorBAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AorBAndC_Btrue_Ctrue
+[       OK ] BooleanAlgebra.AorBAndC_Btrue_Ctrue
+[ RUN      ] BooleanAlgebra.AorBAndC_Atrue_Ctrue
+[       OK ] BooleanAlgebra.AorBAndC_Atrue_Ctrue
+[ RUN      ] BooleanAlgebra.Aor_BAndC_AllFalse
+[       OK ] BooleanAlgebra.Aor_BAndC_AllFalse
+[ RUN      ] BooleanAlgebra.Aor_BAndC_Atrue
+[       OK ] BooleanAlgebra.Aor_BAndC_Atrue
+[ RUN      ] BooleanAlgebra.Aor_BAndC_BAndCTrue
+[       OK ] BooleanAlgebra.Aor_BAndC_BAndCTrue
+[ RUN      ] BooleanAlgebra.Aor_BAndC_BTrue_CFalse
+[       OK ] BooleanAlgebra.Aor_BAndC_BTrue_CFalse
+[ RUN      ] BooleanAlgebra.AAndBAndC_AllTrue
+[       OK ] BooleanAlgebra.AAndBAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBAndC_CFalse
+[       OK ] BooleanAlgebra.AAndBAndC_CFalse
+[ RUN      ] BooleanAlgebra.AAndBAndC_BFalse
+[       OK ] BooleanAlgebra.AAndBAndC_BFalse
+[ RUN      ] BooleanAlgebra.AAndBAndC_AFalse
+[       OK ] BooleanAlgebra.AAndBAndC_AFalse
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_AAndB
+[       OK ] BooleanAlgebra.AAndBOrAAndC_AAndB
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_AAndC
+[       OK ] BooleanAlgebra.AAndBOrAAndC_AAndC
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_OnlyA
+[       OK ] BooleanAlgebra.AAndBOrAAndC_OnlyA
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_AllTrue
+[       OK ] BooleanAlgebra.AAndBOrAAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBOrAAndC_OnlyB
+[       OK ] BooleanAlgebra.AAndBOrAAndC_OnlyB
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AAndB
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AAndB
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AAndC
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AAndC
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AFalse
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AFalse
+[ RUN      ] BooleanAlgebra.AAndBXorAAndC_AllTrue
+[       OK ] BooleanAlgebra.AAndBXorAAndC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AAndB_CFalse
+/workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/generated/generated_test_file.cpp:84: Failure
+EXPECT_TRUE failed: check_a_AND_b_XOR_a_AND_NOT_c(true, true, false)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotC_AAndB_CFalse
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AllTrue
+/workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/generated/generated_test_file.cpp:85: Failure
+EXPECT_FALSE failed: check_a_AND_b_XOR_a_AND_NOT_c(true, true, true)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotC_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AAndNotC
+[       OK ] BooleanAlgebra.AAndBXorAAndNotC_AAndNotC
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotC_AFalse
+[       OK ] BooleanAlgebra.AAndBXorAAndNotC_AFalse
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndB
+/workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/generated/generated_test_file.cpp:90: Failure
+EXPECT_TRUE failed: check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, false, false)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndB
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AllTrue
+[       OK ] BooleanAlgebra.AAndBXorAAndNotCOrD_AllTrue
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndNotCOrD
+[       OK ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndNotCOrD
+[ RUN      ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndBOrC
+/workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/generated/generated_test_file.cpp:93: Failure
+EXPECT_FALSE failed: check_a_AND_b_XOR_a_AND_NOT_c_OR_d(true, true, true, false)
+[  FAILED  ] BooleanAlgebra.AAndBXorAAndNotCOrD_AAndBOrC
+[==========] 61 tests ran.
+[  PASSED  ] 57 tests.
+[  FAILED  ] 4 tests.
+
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   0.03 sec
+
+The following tests FAILED:
+	  1 - first_baseline_generated_tests (Failed)
+Errors while running CTest

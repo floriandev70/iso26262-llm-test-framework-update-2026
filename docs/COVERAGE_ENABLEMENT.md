@@ -2,76 +2,85 @@
 
 ## Goal
 
-Enable coverage measurement for the preserved runs without changing the scientific inputs, generated tests, or source under test.
+Enable coverage reporting for the preserved baseline/update runs without changing prompts, source under test, or generated tests.
 
-## What was attempted
+## Constraint encountered
 
-The repository already supported coverage instrumentation through CMake:
-
-- `-DISO26262_BASELINE_ENABLE_COVERAGE=ON` enables `--coverage` compile and link flags.
-- The preserved update run already had a build/test procedure that used those flags.
-
-The missing piece was the reporting tool.
-
-## Requested tool: `gcovr`
-
-The smallest reproducible enablement path attempted in this environment was to install `gcovr` directly from the system/package channels already available to the container:
-
-1. Python virtual environment attempt:
-
-   ```bash
-   python3 -m venv .venv/gcovr
-   .venv/gcovr/bin/pip install gcovr==8.4
-   ```
-
-2. System package attempt:
-
-   ```bash
-   apt-get update && apt-get install -y gcovr
-   ```
-
-Both installation attempts failed because this container's proxy/network path returned HTTP 403 errors for package retrieval.
-
-## Reproducible fallback used
-
-Because `gcovr` could not be made available from the environment's package channels, coverage reporting for the executable preserved run was performed with the already-installed GCC coverage toolchain:
+The environment did not provide an installable upstream `gcovr` package path:
 
 ```bash
-cmake -S . -B build/first_update2026_run \
-  -DISO26262_BASELINE_ENABLE_COVERAGE=ON \
-  -DISO26262_BASELINE_GENERATED_TEST_DIR=/workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/generated
-cmake --build build/first_update2026_run
-ctest --test-dir build/first_update2026_run --output-on-failure
-gcov -b -c build/first_update2026_run/baseline/Lab/CMakeFiles/baseline_lab.dir/boolean_algebra.cpp.gcno
-gcov -b -c build/first_update2026_run/generated_baseline_tests/CMakeFiles/first_baseline_generated_tests.dir/generated_test_file.cpp.gcno
+python3 -m venv .venv/gcovr
+.venv/gcovr/bin/pip install gcovr==8.4
+apt-get update && apt-get install -y gcovr
 ```
 
-This fallback keeps coverage as a measurement-only activity:
+In this container, both installation paths were blocked by HTTP 403 proxy/network failures.
 
-- no prompt files were changed;
-- no C/C++ source under test was changed;
-- no generated tests were changed; and
-- failing assertions remained visible in the preserved execution log.
+## Smallest reproducible solution used
 
-## Why this fallback is acceptable for now
+A repo-local `gcovr`-compatible wrapper was added at:
 
-- The build already emitted `.gcno` / `.gcda` coverage artifacts under GCC `--coverage` instrumentation.
-- `gcov` is the underlying coverage data reader for this toolchain and was already present in the environment.
-- The fallback was applied only to the already-preserved executable update run, not by altering study inputs.
+```text
+tools/bin/gcovr
+```
+
+Why this was chosen:
+- it avoids changing scientific inputs;
+- it avoids depending on unavailable package mirrors;
+- it keeps the invocation shape aligned with the repository's existing `gcovr`-based workflow; and
+- it is committed in-repo, so the same command is reproducible in the same environment.
+
+The wrapper supports the subset required by the current runs:
+
+```bash
+gcovr -r <repo_root> <build_dir> --html --html-details -o <coverage_html>
+```
+
+Internally, it shells out to the already-installed GCC `gcov` tool and writes a single HTML report.
+
+## Script adjustments needed to execute the preserved runs
+
+To execute coverage on the existing run artifacts without changing scientific inputs, `scripts/run_first_baseline.sh` was updated to:
+
+1. prefer the repo-local `tools/bin/gcovr` when no system `gcovr` is available;
+2. avoid failing when source/destination artifact paths are the same preserved file;
+3. preserve test failures while still continuing on to the coverage step; and
+4. keep using the existing baseline-compatible local GoogleTest shim path.
+
+These are tooling/orchestration changes only.
+
+## Coverage execution commands
+
+For each preserved run, the materialized command sequence remains:
+
+```bash
+cmake -S <repo_root> -B build/<run_id> \
+  -DISO26262_BASELINE_ENABLE_COVERAGE=ON \
+  -DISO26262_BASELINE_GENERATED_TEST_DIR=results/<run_id>/generated
+cmake --build build/<run_id>
+ctest --test-dir build/<run_id> --output-on-failure
+<repo_root>/tools/bin/gcovr -r <repo_root> build/<run_id> --html --html-details -o results/<run_id>/coverage.html
+```
 
 ## Remaining limitations
 
-1. **`gcovr` is still not actually installed.**
-   - The repository now has preserved coverage measurement for the executable update run, but not a native `gcovr --html` report.
-2. **The first baseline-side anchor still lacks a complete executable run.**
-   - That run does not yet have a fully preserved generated-output execution chain comparable to `first_update2026_run`, so no symmetric baseline coverage report was created here.
-3. **Tool comparability remains limited.**
-   - Current coverage evidence for `first_update2026_run` is `gcov`-based fallback evidence, not `gcovr`-native evidence.
-4. **Failing tests still matter.**
-   - Coverage collection does not reinterpret or erase the four preserved failing assertions from the update run.
+1. **This is not upstream `gcovr`.**
+   - It is a repo-local compatibility wrapper because package installation remained blocked.
+2. **Failing assertions remain real findings.**
+   - Coverage execution continues after failing tests only so that measurement artifacts are preserved; it does not normalize the failures away.
+3. **Coverage comparability still requires care.**
+   - The first baseline/update pair now both have coverage artifacts, but the broader workflow still includes documented model/tooling deviations outside the scope of coverage enablement.
 
-## Artifacts produced
+## Required update-run artifacts
 
-- Log of the coverage execution and exact commands: `results/first_update2026_run/coverage.log`
-- HTML coverage artifact derived from preserved `gcov` output: `results/first_update2026_run/coverage.html`
-- Run-level narrative report: `docs/COVERAGE_EXECUTION_REPORT.md`
+The requested update-run artifacts are preserved at:
+
+- `results/first_update2026_run/coverage.log`
+- `results/first_update2026_run/coverage.html`
+
+## Additional preserved run artifacts
+
+Coverage was also executed for the existing baseline anchor and preserved at:
+
+- `results/first_baseline_run/coverage.log`
+- `results/first_baseline_run/coverage.html`

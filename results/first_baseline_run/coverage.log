@@ -1,7 +1,7 @@
 Coverage tool: gcovr-compatible-wrapper 0.1
-Run id: first_update2026_run
-Coverage command: "/workspace/iso26262-llm-test-framework-update-2026/tools/bin/gcovr" -r /workspace/iso26262-llm-test-framework-update-2026 /workspace/iso26262-llm-test-framework-update-2026/build/first_update2026_run --html --html-details -o /workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/coverage.html
-Associated test log: results/first_update2026_run/test_execution.log
+Run id: first_baseline_run
+Coverage command: "/workspace/iso26262-llm-test-framework-update-2026/tools/bin/gcovr" -r /workspace/iso26262-llm-test-framework-update-2026 /workspace/iso26262-llm-test-framework-update-2026/build/first_baseline_run --html --html-details -o /workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/coverage.html
+Associated test log: results/first_baseline_run/test_execution.log
 Note: failing assertions were preserved; coverage was executed after the instrumented test run and did not alter findings.
 
 baseline/Lab/boolean_algebra.cpp
@@ -19,7 +19,7 @@ baseline/Lab/real_world.cpp
   lines: 0.00% of 46
   branches: 0.00% of 25
   taken: 0.00% of 25
-results/first_update2026_run/generated/generated_test_file.cpp
+results/first_baseline_run/generated/generated_test_file.cpp
   lines: 100.00% of 61
   branches: 30.08% of 512
   taken: 15.04% of 512
@@ -33,4 +33,4 @@ third_party/gtest_shim/src/gtest_shim.cpp
 third_party/gtest_shim/src/gtest_shim_main.cpp
   lines: 100.00% of 3
   calls: 100.00% of 2
-HTML report written to /workspace/iso26262-llm-test-framework-update-2026/results/first_update2026_run/coverage.html
+HTML report written to /workspace/iso26262-llm-test-framework-update-2026/results/first_baseline_run/coverage.html
